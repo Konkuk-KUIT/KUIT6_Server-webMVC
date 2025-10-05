@@ -17,7 +17,6 @@ public class CreateUserController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         User user = new User(req.getParameter("userId"), req.getParameter("password"), req.getParameter("name")
                 , req.getParameter("email"));
-        super.doPost(req, resp);
         MemoryUserRepository.getInstance().addUser(user);
         System.out.println("user 회원가입 완료!");
         resp.sendRedirect("/user/list");

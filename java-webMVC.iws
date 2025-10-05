@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4283b758-8b20-43c5-8e7d-31861dd11a18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +223,7 @@
       <option name="presentableId" value="Default" />
       <updated>1759660398700</updated>
       <workItem from="1759660400364" duration="1149000" />
-      <workItem from="1759662770871" duration="1358000" />
+      <workItem from="1759662770871" duration="2023000" />
     </task>
     <servers />
   </component>
