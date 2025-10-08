@@ -16,6 +16,11 @@ import java.util.Collection;
 public class ListUserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if ((User) req.getSession().getAttribute("user") == null) {
+            resp.sendRedirect("/user/login");
+            return;
+        }
+
         Collection<User> users = MemoryUserRepository.getInstance().findAll();
         req.setAttribute("users", users);
         RequestDispatcher rd = req.getRequestDispatcher("/user/list.jsp");
