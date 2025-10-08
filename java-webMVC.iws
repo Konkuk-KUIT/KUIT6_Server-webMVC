@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4283b758-8b20-43c5-8e7d-31861dd11a18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,6 +228,8 @@
       <workItem from="1759818886705" duration="1560000" />
       <workItem from="1759840703698" duration="1000000" />
       <workItem from="1759883812498" duration="14000" />
+      <workItem from="1759883838363" duration="4244000" />
+      <workItem from="1759900070020" duration="387000" />
     </task>
     <servers />
   </component>
