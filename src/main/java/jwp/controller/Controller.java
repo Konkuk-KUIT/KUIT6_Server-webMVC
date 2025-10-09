@@ -6,5 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 public interface Controller {
+    String REDIRECT_PREFIX = "redirect:";
+
     String process(HttpServletRequest req, HttpServletResponse resp);
 }
