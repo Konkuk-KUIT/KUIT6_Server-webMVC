@@ -1,7 +1,10 @@
 package jwp.controller;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 public interface Controller {
-    public String process(Map<String, String> paramMap, Map<String, Object> model);
+    String process(HttpServletRequest res, HttpServletResponse resp);
 }
