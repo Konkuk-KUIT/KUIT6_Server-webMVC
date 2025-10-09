@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4283b758-8b20-43c5-8e7d-31861dd11a18" name="Changes" comment="" />
+    <list default="true" id="4283b758-8b20-43c5-8e7d-31861dd11a18" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,8 +81,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -229,7 +232,7 @@
       <workItem from="1759883838363" duration="4244000" />
       <workItem from="1759900070020" duration="2436000" />
       <workItem from="1759916106588" duration="8000" />
-      <workItem from="1759978561936" duration="303000" />
+      <workItem from="1759978561936" duration="2774000" />
     </task>
     <servers />
   </component>
