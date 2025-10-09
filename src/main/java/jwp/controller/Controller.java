@@ -6,5 +6,5 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 public interface Controller {
-    String process(HttpServletRequest res, HttpServletResponse resp);
+    String process(HttpServletRequest req, HttpServletResponse resp);
 }
