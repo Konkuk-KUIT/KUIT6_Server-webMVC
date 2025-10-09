@@ -29,7 +29,7 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private static void viewResolve(HttpServletRequest req, HttpServletResponse resp, String viewName) throws IOException, ServletException {
-        if (viewName.contains(Controller.REDIRECT_PREFIX)) {
+        if (viewName.startsWith(Controller.REDIRECT_PREFIX)) {
             resp.sendRedirect(viewName.substring(Controller.REDIRECT_PREFIX.length()));
             return;
         }
