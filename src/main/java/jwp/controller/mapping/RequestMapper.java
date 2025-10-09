@@ -25,6 +25,6 @@ public class RequestMapper implements ControllerMapping {
 
     @Override
     public Controller mappingController(String uri) {
-        mappings.get(uri);
+        return mappings.get(uri);
     }
 }
