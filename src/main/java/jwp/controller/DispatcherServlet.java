@@ -12,9 +12,7 @@ import java.io.IOException;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
-    private static final String REDIRECT_PREFIX = "redirect:";
     private RequestMapper requestMapper = RequestMapper.getInstance();
-
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,8 +29,8 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private static void viewResolve(HttpServletRequest req, HttpServletResponse resp, String viewName) throws IOException, ServletException {
-        if (viewName.contains(REDIRECT_PREFIX)) {
-            resp.sendRedirect(viewName.substring(REDIRECT_PREFIX.length()));
+        if (viewName.contains(Controller.REDIRECT_PREFIX)) {
+            resp.sendRedirect(viewName.substring(Controller.REDIRECT_PREFIX.length()));
             return;
         }
         RequestDispatcher rd = req.getRequestDispatcher(viewName);
