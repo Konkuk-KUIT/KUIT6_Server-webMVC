@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb75c68-f6e4-4da2-a8ff-785a84c244f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/SignOutController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +214,7 @@
       <updated>1759815562208</updated>
       <workItem from="1759815563940" duration="3355000" />
       <workItem from="1759911885204" duration="1782000" />
-      <workItem from="1759986417780" duration="2554000" />
+      <workItem from="1759986417780" duration="3461000" />
     </task>
     <servers />
   </component>
