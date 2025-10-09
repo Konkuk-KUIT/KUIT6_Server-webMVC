@@ -1,33 +1,35 @@
 package jwp.controller;
 
 import core.db.MemoryUserRepository;
+import core.web.SessionConst;
+import core.web.mvc.Controller;
 import jwp.model.User;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Map;
 
-@WebServlet("/user/update")
-public class UpdateUserController extends HttpServlet {
+public class UpdateUserController implements Controller {
     private final MemoryUserRepository memoryUserRepository = MemoryUserRepository.getInstance();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession(false);
-        if(session == null || session.getAttribute("user") == null){
-            resp.sendRedirect("/user/login.html");
-            return;
+    public String handle(HttpServletRequest req, HttpServletResponse resp, Map<String, Object> model) throws ServletException, IOException {
+        if (!"POST".equalsIgnoreCase(req.getMethod())) {
+            return "redirect:/";
         }
-        User loginUser = (User)session.getAttribute("user");
+
+        HttpSession session = req.getSession(false);
+        Object attr = (session != null) ? session.getAttribute(SessionConst.USER_SESSION_KEY) : null;
+        if (!(attr instanceof User loginUser)) {
+            return "redirect:/user/login.html";
+        }
 
         String userId = req.getParameter("userId");
         if(userId==null||!userId.equals(loginUser.getUserId())){
-            resp.sendRedirect("/");
-            return;
+            return "redirect:/";
         }
 
         String password = req.getParameter("password");
@@ -36,9 +38,8 @@ public class UpdateUserController extends HttpServlet {
 
         User updateUser = new User(userId,password,name,email);
         memoryUserRepository.changeUserInfo(updateUser);
+        session.setAttribute(SessionConst.USER_SESSION_KEY, updateUser);
 
-        session.setAttribute("user",updateUser);
-
-        resp.sendRedirect("/user/list");
+        return "redirect:/user/list";
     }
 }

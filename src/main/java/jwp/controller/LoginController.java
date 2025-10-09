@@ -1,34 +1,36 @@
 package jwp.controller;
 
 import core.db.MemoryUserRepository;
+import core.web.SessionConst;
+import core.web.mvc.Controller;
 import jwp.model.User;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
+import java.util.Map;
 
-@WebServlet("/user/login")
-public class LoginController extends HttpServlet {
+public class LoginController implements Controller {
     private final MemoryUserRepository userRepository = MemoryUserRepository.getInstance();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       String userId = req.getParameter("userId");
-       String password = req.getParameter("password");
+    public String handle(HttpServletRequest req, HttpServletResponse resp, Map<String, Object> model) throws Exception {
+        if (!"POST".equalsIgnoreCase(req.getMethod())) {
+            return "redirect:/user/login.html";
+        }
 
-       User user = userRepository.findUserById(userId);
-       boolean ok = (user!=null)&&user.matchPassword(password);
+        String userId = req.getParameter("userId");
+        String password = req.getParameter("password");
 
-       if(ok){
-           HttpSession session = req.getSession();
-           session.setAttribute("user",user);
-           resp.sendRedirect("/");
-       }else{
-           resp.sendRedirect("/user/loginFailed.jsp");
-       }
+        User user = userRepository.findUserById(userId);
+        boolean ok = (user != null) && user.matchPassword(password);
+
+        if (ok) {
+            HttpSession session = req.getSession();
+            session.setAttribute(SessionConst.USER_SESSION_KEY, user);
+            return "redirect:/";
+        } else {
+            return "/user/loginFailed";
+        }
     }
 }

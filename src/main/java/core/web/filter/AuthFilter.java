@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/user/list", "/user/updateForm", "/user/update"})
+@WebFilter(urlPatterns = "/user/*")
 public class AuthFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
@@ -19,7 +19,7 @@ public class AuthFilter implements Filter {
         HttpSession session = request.getSession(false);
         Object user = (session!=null)?session.getAttribute(SessionConst.USER_SESSION_KEY):null;
         if(user==null){
-            response.sendRedirect("/user/login.html");
+            response.sendRedirect(request.getContextPath() + "/user/login");
             return;
         }
         chain.doFilter(req,res);
