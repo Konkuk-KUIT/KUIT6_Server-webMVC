@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4283b758-8b20-43c5-8e7d-31861dd11a18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +231,7 @@
       <workItem from="1759883838363" duration="4244000" />
       <workItem from="1759900070020" duration="2436000" />
       <workItem from="1759916106588" duration="8000" />
-      <workItem from="1759978561936" duration="4610000" />
+      <workItem from="1759978561936" duration="5483000" />
     </task>
     <servers />
   </component>
