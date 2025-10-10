@@ -11,7 +11,7 @@
         <div>
             ID와 비밀번호가 틀렸습니다.
         </div>
-        <form name="login" method="post" action="/user/login">
+        <form name="login" method="post" action="/user/loginAction">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
