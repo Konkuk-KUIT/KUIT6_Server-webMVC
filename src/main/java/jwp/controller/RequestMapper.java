@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RequestMapper {
-    private Map<String, Controller> controllers =  new HashMap<>();
+    private static Map<String, Controller> controllers =  new HashMap<>();
 
-    public RequestMapper() {
+    public RequestMapper() {}
+
+    static {
         controllers.put("/", new HomeController());
         controllers.put("/user/signup", new CreateUserController());
         controllers.put("/user/login", new LoginController());
