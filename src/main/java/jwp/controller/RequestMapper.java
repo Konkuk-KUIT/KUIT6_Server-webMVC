@@ -14,6 +14,9 @@ public class RequestMapper {
         controllers.put("/user/list", new ListUserController());
         controllers.put("/user/updateForm", new UpdateUserFormController());
         controllers.put("/user/update", new UpdateUserController());
+        controllers.put("/user/loginForm", new ForwardingController("/user/login.jsp"));
+        controllers.put("/user/signupForm", new ForwardingController("/user/form.jsp"));
+        controllers.put("/user/loginFailed", new ForwardingController("/user/loginFailed.jsp"));
     }
 
     public Controller getController(String url) {
