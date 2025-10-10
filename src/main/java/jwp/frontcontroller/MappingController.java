@@ -1,9 +1,6 @@
 package jwp.frontcontroller;
 
-import jwp.controller.Controller;
-import jwp.controller.CreateUserController;
-import jwp.controller.HomeController;
-import jwp.controller.SignInController;
+import jwp.controller.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +13,7 @@ public class MappingController {
         controllers.put("/", new HomeController());
         controllers.put("/user/signup", new CreateUserController());
         controllers.put("/user/login", new SignInController());
+        controllers.put("/user/logout", new SignOutController());
     }
 
     public Controller getController(String url) {
