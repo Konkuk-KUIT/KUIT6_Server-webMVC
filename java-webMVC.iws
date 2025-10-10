@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: create LoginController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogoutController.java" afterDir="false" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: create LogoutController">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,26 +106,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.WebServerLauncher.executor": "Run",
-    "Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.WebServerLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/lib" />
@@ -226,7 +227,8 @@
       <option name="presentableId" value="Default" />
       <updated>1760073220701</updated>
       <workItem from="1760073221474" duration="74000" />
-      <workItem from="1760073304811" duration="5380000" />
+      <workItem from="1760073304811" duration="8302000" />
+      <workItem from="1760089976639" duration="356000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -252,7 +254,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760078525270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: create LogoutController">
+      <option name="closed" value="true" />
+      <created>1760078833695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760078833695</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: create LogoutController">
+      <option name="closed" value="true" />
+      <created>1760078862910</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760078862910</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +280,8 @@
     <MESSAGE value="feat: create CreateUserController" />
     <MESSAGE value="feat: create ListUserController" />
     <MESSAGE value="feat: create LoginController" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create LoginController" />
+    <MESSAGE value="feat: create LogoutController" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create LogoutController" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
