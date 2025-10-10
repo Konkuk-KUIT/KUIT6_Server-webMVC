@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Collection;
 
 @WebServlet("/user/login")
 public class LoginController extends HttpServlet {
@@ -18,11 +19,11 @@ public class LoginController extends HttpServlet {
         User LoginUserInfo = new User(req.getParameter("userId"), req.getParameter("password"), null, null);
         User targetUser = null;
         HttpSession session;
-        MemoryUserRepository repo = MemoryUserRepository.getInstance();
+        Collection<User> users = MemoryUserRepository.getInstance().findAll();
 
         //사용자 인증
         boolean flag = false;
-        for (User user : repo.findAll()) {
+        for (User user : users) {
 //            if(user.isSameUser(LoginUserInfo.getUserId())&&user.matchPassword(LoginUserInfo.getPassword())){
             if (matchUserByIdPw(LoginUserInfo, user)) {
                 targetUser = user;
