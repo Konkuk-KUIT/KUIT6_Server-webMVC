@@ -1,6 +1,8 @@
 package jwp.controller;
 
 import core.db.MemoryUserRepository;
+import jwp.enums.HttpUrl;
+import jwp.enums.JspUrl;
 import jwp.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -12,17 +14,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collection;
 
-@WebServlet("/user/list")
-public class ListUserController extends HttpServlet {
+public class ListUserController implements Controller {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("/");
-            return;
+    public String service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(!isUserWithSession(req)) {
+            return HttpUrl.REDIRECT.getValue().concat(HttpUrl.ROOT.getValue());
         }
         Collection<User> users = MemoryUserRepository.getInstance().findAll();
         req.setAttribute("users", users);
-        RequestDispatcher rd = req.getRequestDispatcher("/user/list.jsp");
-        rd.forward(req, resp);
+       return JspUrl.LIST.getValue();
+    }
+
+    private static boolean isUserWithSession(HttpServletRequest req) {
+        return req.getSession().getAttribute("user") != null;
     }
 }
