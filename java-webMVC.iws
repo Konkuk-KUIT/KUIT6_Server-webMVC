@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: create LogoutController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: create UpdateUserFormController">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +228,7 @@
       <updated>1760073220701</updated>
       <workItem from="1760073221474" duration="74000" />
       <workItem from="1760073304811" duration="8302000" />
-      <workItem from="1760089976639" duration="356000" />
+      <workItem from="1760089976639" duration="1093000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -270,7 +270,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760078862910</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: create UpdateUserFormController">
+      <option name="closed" value="true" />
+      <created>1760090670851</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760090670851</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +289,8 @@
     <MESSAGE value="feat: create ListUserController" />
     <MESSAGE value="feat: create LoginController" />
     <MESSAGE value="feat: create LogoutController" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create LogoutController" />
+    <MESSAGE value="feat: create UpdateUserFormController" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create UpdateUserFormController" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
