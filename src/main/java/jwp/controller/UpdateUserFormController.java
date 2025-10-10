@@ -1,5 +1,7 @@
 package jwp.controller;
 
+import jwp.model.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,9 +15,10 @@ import java.util.Objects;
 @WebServlet("/user/updateForm")
 public class UpdateUserFormController  extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        String userId = session.getAttribute("userId").toString();
+        User user = (User) session.getAttribute("user");
+        String userId = user.getUserId();
         if (Objects.equals(userId, req.getParameter("userId"))) {
             RequestDispatcher rd = req.getRequestDispatcher("/user/updateForm.jsp");
             rd.forward(req, resp);
