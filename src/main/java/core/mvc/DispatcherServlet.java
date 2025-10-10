@@ -33,8 +33,6 @@ public class DispatcherServlet extends HttpServlet {
         if (url.startsWith("redirect:")) {
             // redirect:/user/list → /user/list 로 잘라서 redirect
             String redirectUrl = url.substring("redirect:".length());
-            //Todo: .jsp 를 붙이는 게 맞는지?
-            resp.sendRedirect(redirectUrl+".jsp");
         } else {
             // 그냥 /user/list.jsp 형태면 forward
             RequestDispatcher rd = req.getRequestDispatcher(url+".jsp");

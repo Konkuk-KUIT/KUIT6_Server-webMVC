@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bff3766a-9628-4857-a08f-b8239a615ce1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/mvc/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/mvc/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/mvc/RequestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LogoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/mvc/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/mvc/DispatcherServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
