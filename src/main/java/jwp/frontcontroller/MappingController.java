@@ -15,6 +15,8 @@ public class MappingController {
         controllers.put("/user/login", new SignInController());
         controllers.put("/user/logout", new SignOutController());
         controllers.put("/user/list", new ListUserController());
+        controllers.put("/user/updateForm", new UpdateFormController());
+        controllers.put("/user/update", new UpdateUserFormController());
     }
 
     public Controller getController(String url) {
