@@ -12,25 +12,29 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/user/login")
-public class LoginController  extends HttpServlet {
+public class LoginController implements Controller {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = MemoryUserRepository.getInstance().findUserById(req.getParameter("userId"));
-        if (user == null) {
-            System.out.println("아이디를 확인해주세요");
-            resp.sendRedirect("/user/loginFailed");
-            return;
-        }
-        if (user.matchPassword(req.getParameter("password"))) {
-            // 세션에 정보 저장
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user);
-
-            System.out.println("로그인 성공");
-            resp.sendRedirect("/");
-        } else {
-            System.out.println("비밀번호를 확인해주세요");
-            resp.sendRedirect("/user/loginFailed");
-        }
+    public String execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        return "";
     }
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        User user = MemoryUserRepository.getInstance().findUserById(req.getParameter("userId"));
+//        if (user == null) {
+//            System.out.println("아이디를 확인해주세요");
+//            resp.sendRedirect("/user/loginFailed");
+//            return;
+//        }
+//        if (user.matchPassword(req.getParameter("password"))) {
+//            // 세션에 정보 저장
+//            HttpSession session = req.getSession();
+//            session.setAttribute("user", user);
+//
+//            System.out.println("로그인 성공");
+//            resp.sendRedirect("/");
+//        } else {
+//            System.out.println("비밀번호를 확인해주세요");
+//            resp.sendRedirect("/user/loginFailed");
+//        }
+//    }
 }
