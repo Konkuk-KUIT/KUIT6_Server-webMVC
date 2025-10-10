@@ -1,5 +1,6 @@
 package jwp.controller;
 
+import core.db.MemoryUserRepository;
 import jwp.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -17,14 +18,17 @@ public class UpdateUserFormController  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User) session.getAttribute("user");
-        String userId = user.getUserId();
-        if (Objects.equals(userId, req.getParameter("userId"))) {
+        User sessionUser = (User) session.getAttribute("user");
+        String updateUserId = req.getParameter("userId");
+
+        if (sessionUser != null && sessionUser.isSameUser(updateUserId)) {
+            User user = MemoryUserRepository.getInstance().findUserById(updateUserId);
+            req.setAttribute("user", user);
             RequestDispatcher rd = req.getRequestDispatcher("/user/updateForm.jsp");
             rd.forward(req, resp);
-            return;
+        } else {
+            resp.sendRedirect("/");
         }
-        resp.sendRedirect("/");
     }
 }
 
