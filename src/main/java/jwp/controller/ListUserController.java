@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
 
@@ -18,7 +19,15 @@ public class ListUserController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Collection<User> users = MemoryUserRepository.getInstance().findAll();
         req.setAttribute("users", users);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/user/list.jsp");
-        dispatcher.forward(req, resp);
+        HttpSession session = req.getSession();
+        User currentUser = (User) session.getAttribute("user");
+        if(currentUser == null) {
+            resp.sendRedirect("/");
+        }
+        else{
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/user/list.jsp");
+            dispatcher.forward(req, resp);
+        }
+
     }
 }
