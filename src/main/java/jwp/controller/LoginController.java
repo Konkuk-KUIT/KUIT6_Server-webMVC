@@ -24,7 +24,6 @@ public class LoginController extends HttpServlet {
         //사용자 인증
         boolean flag = false;
         for (User user : users) {
-//            if(user.isSameUser(LoginUserInfo.getUserId())&&user.matchPassword(LoginUserInfo.getPassword())){
             if (matchUserByIdPw(LoginUserInfo, user)) {
                 targetUser = user;
                 flag = true;
