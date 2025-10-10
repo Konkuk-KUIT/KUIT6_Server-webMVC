@@ -1,5 +1,6 @@
 package jwp.controller;
 
+import core.db.MemoryUserRepository;
 import jwp.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -24,5 +25,13 @@ public class UpdateUserFormController extends HttpServlet {
             rd.forward(req, resp);
         }
         resp.sendRedirect("/");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User updatedUser = MemoryUserRepository.getInstance().findUserById(req.getParameter("userId"));
+        req.setAttribute("user", updatedUser);
+        RequestDispatcher rd = req.getRequestDispatcher("/user/updateForm.jsp");
+        rd.forward(req, resp);
     }
 }
