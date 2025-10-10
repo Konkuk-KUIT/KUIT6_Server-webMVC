@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class RequestMapper {
     private static final Map<String, Controller> mappingController = new HashMap<>();
-    public void init() throws ServletException {
+    static {
         mappingController.put("/", new HomeController());
         mappingController.put("/user/signup", new CreateUserController());
         mappingController.put("/user/list", new ListUserController());

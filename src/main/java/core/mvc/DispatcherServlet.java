@@ -10,13 +10,13 @@ import java.io.IOException;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
-    private RequestMapper requestMapper;
+    private final RequestMapper requestMapper = new RequestMapper();
 
     @Override
     public void init() throws ServletException {
         //RequestMapper 객체 생성 및 초기 맵핑
-        requestMapper = new RequestMapper();
-        requestMapper.init();
+//        requestMapper = new RequestMapper();
+//        requestMapper.init();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class DispatcherServlet extends HttpServlet {
         String path = req.getRequestURI();
         Controller controller = requestMapper.get(path);
 
-        if(controller==null){
+        if (controller == null) {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
@@ -35,7 +35,7 @@ public class DispatcherServlet extends HttpServlet {
             String redirectUrl = url.substring("redirect:".length());
         } else {
             // 그냥 /user/list.jsp 형태면 forward
-            RequestDispatcher rd = req.getRequestDispatcher(url+".jsp");
+            RequestDispatcher rd = req.getRequestDispatcher(url + ".jsp");
             rd.forward(req, resp);
         }
     }
