@@ -1,22 +1,18 @@
 package jwp.controller;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
-@WebServlet("/user/logout")
-public class LogoutUserController extends HttpServlet {
+public class LogoutUserController implements Controller {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
+    public String process(HttpServletRequest rq, HttpServletResponse resp) throws Exception {
+        HttpSession session = rq.getSession();
         if(session != null){
             session.removeAttribute("user");
             System.out.println("user 로그아웃 성공");
         }
-        resp.sendRedirect("/");
+        return "redirect:/";
     }
+
 }
