@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0eb75c68-f6e4-4da2-a8ff-785a84c244f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/frontcontroller/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/frontcontroller/MappingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/SignInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/SignInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/frontcontroller/MappingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/frontcontroller/MappingController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +217,7 @@
       <workItem from="1759911885204" duration="1782000" />
       <workItem from="1759986417780" duration="10003000" />
       <workItem from="1760010825862" duration="8052000" />
-      <workItem from="1760081826478" duration="3533000" />
+      <workItem from="1760081826478" duration="3870000" />
     </task>
     <servers />
   </component>

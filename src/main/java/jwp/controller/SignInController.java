@@ -11,10 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/user/login")
-public class SignInController extends HttpServlet {
+//@WebServlet("/user/login")
+//public class SignInController extends HttpServlet {
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        String userId = req.getParameter("userId");
+//        String pwd = req.getParameter("password");
+//        User user = MemoryUserRepository.getInstance().findUserById(userId);
+//        if(user != null && pwd.equals(user.getPassword())) {
+//            // 로그인 성공
+//            HttpSession session = req.getSession();
+//            session.setAttribute("user", user);
+//            resp.sendRedirect("/");
+//
+//        } else {
+//            //로그인 실패
+//            resp.sendRedirect("/user/loginFailed.jsp");
+//        }
+//
+//    }
+//}
+
+public class SignInController implements Controller {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String executePost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String userId = req.getParameter("userId");
         String pwd = req.getParameter("password");
         User user = MemoryUserRepository.getInstance().findUserById(userId);
@@ -22,12 +42,9 @@ public class SignInController extends HttpServlet {
             // 로그인 성공
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            resp.sendRedirect("/");
-
-        } else {
-            //로그인 실패
-            resp.sendRedirect("/user/loginFailed.jsp");
+            return "redirect:/";
         }
-
+        // 로그인 실패
+        return "redirect:/user/loginFailed.jsp";
     }
 }
