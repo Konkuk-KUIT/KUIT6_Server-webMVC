@@ -16,8 +16,9 @@ public class SignInController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId = req.getParameter("userId");
+        String pwd = req.getParameter("password");
         User user = MemoryUserRepository.getInstance().findUserById(userId);
-        if(user != null){
+        if(user != null && pwd.equals(user.getPassword())) {
             // 로그인 성공
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
