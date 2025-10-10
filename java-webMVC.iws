@@ -4,12 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="feat: user update 구현">
-      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
+    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="init: 초기 설정">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +97,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -130,7 +149,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "gyuun/week4",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/gyuun/Documents/project/KUIT_SERVER/KUIT6_Server-webMVC",
     "node.js.detected.package.eslint": "true",
@@ -226,7 +245,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760027188249</updated>
-      <workItem from="1760027189278" duration="24435000" />
+      <workItem from="1760027189278" duration="29254000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 실습">
       <option name="closed" value="true" />
@@ -268,11 +287,38 @@
       <option name="project" value="LOCAL" />
       <updated>1760080694634</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: 개인정보 수정 보안 강화!">
+      <option name="closed" value="true" />
+      <created>1760081553676</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760081553676</updated>
+    </task>
+    <task id="LOCAL-00007" summary="init: 초기 설정">
+      <option name="closed" value="true" />
+      <created>1760081571495</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760081571495</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 실습" />
@@ -280,7 +326,9 @@
     <MESSAGE value="feat: 로그아웃 구현" />
     <MESSAGE value="feat: userForm 구현" />
     <MESSAGE value="feat: user update 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: user update 구현" />
+    <MESSAGE value="fix: 개인정보 수정 보안 강화!" />
+    <MESSAGE value="init: 초기 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="init: 초기 설정" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

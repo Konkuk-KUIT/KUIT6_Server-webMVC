@@ -12,10 +12,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Collection;
 
-@WebServlet("/user/login")
-public class LoginController extends HttpServlet {
+public class LoginController implements Controller {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+   public String service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId = req.getParameter("userId");
         String password = req.getParameter("password");
 
@@ -24,9 +23,9 @@ public class LoginController extends HttpServlet {
             System.out.println("로그인 성공");
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            resp.sendRedirect("/");
+            return "redirect:/";
         }else{
-            resp.sendRedirect("/user/loginFailed.jsp");
+            return "/loginFailed";
         }
     }
 }

@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/user/update")
-public class UpdateUserController extends HttpServlet {
+public class UpdateUserController implements Controller {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String userId = req.getParameter("userId");
         String name = req.getParameter("name");
         String email = req.getParameter("email");
@@ -21,6 +20,6 @@ public class UpdateUserController extends HttpServlet {
 
         User user = new User(userId, name, email, password);
         MemoryUserRepository.getInstance().changeUserInfo(user);
-        resp.sendRedirect("/user/list");
+        return "redirect:/user/list";
     }
 }
