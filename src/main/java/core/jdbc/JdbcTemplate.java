@@ -10,15 +10,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcTemplate<T> {
-    public void update(String sql, PreparedStatementSetter pstmtSetter) throws SQLException {
+    public void update(String sql, PreparedStatementSetter pstmtSetter) {
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);) {
             pstmtSetter.setParemeters(pstmt);
             pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public List<T> query(String sql, RowMapper<T> rowMapper) throws SQLException {
+    public List<T> query(String sql, RowMapper<T> rowMapper) {
         List<T> objects = new ArrayList<>();
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -27,24 +29,25 @@ public class JdbcTemplate<T> {
                 T object = rowMapper.mapRow(rs);
                 objects.add(object);
             }
+        } catch (SQLException e) {
+            throw new RuntimeException();
         }
         return objects;
     }
 
-    public T queryForObject(String sql, PreparedStatementSetter pstmtSetter, RowMapper<T> rowMapper) throws SQLException {
+    public T queryForObject(String sql, PreparedStatementSetter pstmtSetter, RowMapper<T> rowMapper) {
         T object = null;
-        ResultSet rs = null;
 
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);) {
-            pstmtSetter.setParemeters(pstmt); // rs 수동 관리 이유
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                object = rowMapper.mapRow(rs);
+            pstmtSetter.setParemeters(pstmt);
+            try (ResultSet rs = pstmt.executeQuery();) {
+                if (rs.next()) {
+                    object = rowMapper.mapRow(rs);
+                }
             }
-        } finally {
-            if (rs != null)
-                rs.close();
+        } catch (SQLException e) {
+            throw new RuntimeException();
         }
         return object;
     }
