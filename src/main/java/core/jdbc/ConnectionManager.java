@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class ConnectionManager {
+public class ConnectionManager implements ConnectionProvider {
     private static final String DB_DRIVER = "org.h2.Driver";
     private static final String DB_URL = "jdbc:h2:~/jwp-basic";
     private static final String DB_USERNAME = "sa";
@@ -24,7 +24,7 @@ public class ConnectionManager {
         return ds;
     }
 
-    public static Connection getConnection() {
+    public Connection getConnection() {
         try {
             return getDataSource().getConnection();
         } catch (SQLException e) {
