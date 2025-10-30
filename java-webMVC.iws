@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1baf2fd4-436f-455d-b554-1baa38630860" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/SessionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/PreparedStatementSetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/RowMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +57,11 @@
     </breakpoint_any>
     <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -137,7 +133,7 @@
     "Gradle.소스 다운로드.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "lulumaster1",
+    "git-widget-placeholder": "lulumaster2",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -200,6 +196,12 @@
       </option>
       <method v="2">
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="java-webMVC" />
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
