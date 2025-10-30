@@ -22,6 +22,10 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURI();
         Controller controller = requestMapping.getController(url);
+//        System.out.println(url);
+//        System.out.println(controller);
+
+//        System.out.println(url);
         try {
             String viewName = controller.execute(req, resp);
             move(viewName, req, resp);

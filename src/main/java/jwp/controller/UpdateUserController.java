@@ -2,6 +2,7 @@ package jwp.controller;
 
 import core.db.MemoryUserRepository;
 import core.mvc.Controller;
+import jwp.dao.UserDao;
 import jwp.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +12,14 @@ public class UpdateUserController implements Controller {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        UserDao dao = new UserDao();
         User modifiedUser = new User(
                 req.getParameter("userId"),
                 req.getParameter("password"),
                 req.getParameter("name"),
                 req.getParameter("email"));
-        MemoryUserRepository.getInstance().update(modifiedUser);
+//        MemoryUserRepository.getInstance().update(modifiedUser);
+        dao.update(modifiedUser);
         return "redirect:/user/list";
     }
 }
