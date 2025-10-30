@@ -4,25 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="init: 초기 설정">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
+    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="fix: MVC 패턴 이용!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/db/Keyholder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ShowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/DispatcherServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/RequestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/RequestMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/qna/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/qna/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/qna/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/qna/show.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,25 +119,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Hwanggyuun"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hwanggyuun&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Hwanggyuun/KUIT6_Server-webMVC.git",
-    "accountId": "77b59fa7-4a40-4999-b9c0-dd96ed94a74a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hwanggyuun/KUIT6_Server-webMVC.git&quot;,
+    &quot;accountId&quot;: &quot;77b59fa7-4a40-4999-b9c0-dd96ed94a74a&quot;
   }
-}]]></component>
+}</component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="33pwBr8NBbMKk2eXpsQRwQVEMm6" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -145,13 +154,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.WebServerLauncher.executor": "Run",
+    "Database Script.jwp.sql.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "gyuun/week4",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/gyuun/Documents/project/KUIT_SERVER/KUIT6_Server-webMVC",
+    "last_opened_file_path": "/Users/gyuun/Documents/project/KUIT_SERVER/KUIT6_Server-webMVCVer 오후 4.47.06",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -162,9 +172,19 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2",
+      "mysql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "e8efdde6-48a1-48a5-a4be-bea867fe56be",
+      "37acdad1-afba-4cc9-8a4c-eb85ee29c263"
+    ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WebServerLauncher">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -185,12 +205,27 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
+    <configuration name="WebServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WebServerLauncher" />
+      <module name="KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="jwp.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="e8efdde6-48a1-48a5-a4be-bea867fe56be" />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -204,6 +239,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="org.example.java-webMVC.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="org.example.java-webMVC.test" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -215,6 +261,11 @@
         <option name="BuildArtifacts" enabled="false" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WebServerLauncher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -223,6 +274,9 @@
         <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
       </set>
     </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="JSP" />
   </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
@@ -245,7 +299,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1760027188249</updated>
-      <workItem from="1760027189278" duration="29254000" />
+      <workItem from="1760027189278" duration="29937000" />
+      <workItem from="1761739591753" duration="61000" />
+      <workItem from="1761739665834" duration="1381000" />
+      <workItem from="1761754086196" duration="17611000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 실습">
       <option name="closed" value="true" />
@@ -303,7 +360,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760081571495</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: MVC 패턴 이용!">
+      <option name="closed" value="true" />
+      <created>1760088254239</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760088254239</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: MVC 패턴 이용!">
+      <option name="closed" value="true" />
+      <created>1760088259491</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760088259491</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +401,8 @@
     <MESSAGE value="feat: user update 구현" />
     <MESSAGE value="fix: 개인정보 수정 보안 강화!" />
     <MESSAGE value="init: 초기 설정" />
-    <option name="LAST_COMMIT_MESSAGE" value="init: 초기 설정" />
+    <MESSAGE value="fix: MVC 패턴 이용!" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: MVC 패턴 이용!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

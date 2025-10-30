@@ -15,6 +15,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         controller = RequestMapper.getController(req.getRequestURI());
+        System.out.println("요청 URI 확인: " + req.getRequestURI()); // 💡 이 코드를 추가
         if(controller==null){
             resp.sendRedirect("/");
             return;

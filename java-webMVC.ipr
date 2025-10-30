@@ -14,6 +14,33 @@
     <bytecodeTargetLevel target="17" />
   </component>
   <component name="CopyrightManager" default="" />
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="jwp-basic" uuid="37acdad1-afba-4cc9-8a4c-eb85ee29c263">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/jwp-basic</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="jwp-basic2" uuid="e8efdde6-48a1-48a5-a4be-bea867fe56be">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:~/jwp-basic</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Deployment" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -21,6 +48,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -29,7 +57,7 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/../KUIT6_Server-webMVCVer 오후 4.47.06" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -67,20 +95,56 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.iml" filepath="$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.main.iml" filepath="$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.test.iml" filepath="$PROJECT_DIR$/1420043726/KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-webMVC.iml" filepath="$PROJECT_DIR$/java-webMVC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.example.java-webMVC.iml" filepath="$PROJECT_DIR$/org.example.java-webMVC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.example.java-webMVC.main.iml" filepath="$PROJECT_DIR$/org.example.java-webMVC.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/org.example.java-webMVC.test.iml" filepath="$PROJECT_DIR$/org.example.java-webMVC.test.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/webapp/WEB-INF/classes" />
+  </component>
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/jwp.sql" dialect="H2" />
+    <file url="file://$PROJECT_DIR$/webapp/WEB-INF/classes/jwp.sql" dialect="H2" />
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="dataSourceStorageLocal" created-in="IU-251.23774.435">
+    <data-source name="jwp-basic" uuid="37acdad1-afba-4cc9-8a4c-eb85ee29c263">
+      <database-info product="H2" version="2.3.232 (2024-08-11)" jdbc-version="4.3" driver-name="H2 JDBC Driver" driver-version="2.3.232 (2024-08-11)" dbms="H2" exact-version="2.3.232" exact-driver-version="2.3">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="jwp-basic2" uuid="e8efdde6-48a1-48a5-a4be-bea867fe56be">
+      <database-info product="H2" version="2.1.210 (2022-01-17)" jdbc-version="4.2" driver-name="H2 JDBC Driver" driver-version="2.1.210 (2022-01-17)" dbms="H2" exact-version="2.1.210" exact-driver-version="2.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>sa</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
   <component name="libraryTable">
     <library name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.12.7" type="java-imported" external-system-id="GRADLE">
@@ -325,7 +389,9 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.1.8.RELEASE/bf8affe2ce53e92e22bf3e2b85dfcbcde089bd0a/spring-jdbc-5.1.8.RELEASE.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.1.8.RELEASE/1e287aa3a129bdc52749cdf779b041a17c06c099/spring-jdbc-5.1.8.RELEASE-sources.jar!/" />
+      </SOURCES>
     </library>
     <library name="Gradle: org.springframework:spring-test:5.1.8.RELEASE" type="java-imported" external-system-id="GRADLE">
       <properties groupId="org.springframework" artifactId="spring-test" version="5.1.8.RELEASE" baseVersion="5.1.8.RELEASE" />

@@ -13,7 +13,9 @@ public class RequestMapper {
         controllers.put("/user/update",new UpdateUserController());
         controllers.put("/user/updateForm",new UpdateUserFormController());
         controllers.put("/user/signup", new CreateUserController());
-
+        controllers.put("/qna/form",new CreateQuestionFormController());
+        controllers.put("/qna/create",new CreateQuestionController());
+        controllers.put("/qna/show",new ShowController());
     }
 
     public static Controller getController(String path) {
