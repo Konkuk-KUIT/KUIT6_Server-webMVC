@@ -20,7 +20,7 @@
                             </strong>
                             <div class="auth-info">
                                 <i class="icon-add-comment"></i>
-                                <span class="time">${question.creatdDate}</span>
+                                <span class="time">${question.createdDate}</span>
                                 <span clas="author">${question.writer}</span>
                                 <!-- <a href="./user/profile.html" class="author">이영선</a> -->
                             </div>
