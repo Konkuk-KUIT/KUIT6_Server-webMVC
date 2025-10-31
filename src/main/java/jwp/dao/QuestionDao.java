@@ -1,6 +1,7 @@
 package jwp.dao;
 
 import core.jdbc.JdbcTemplate;
+import core.jdbc.KeyHolder;
 import core.jdbc.PreparedStatementSetter;
 import core.jdbc.RowMapper;
 import jwp.model.Question;
@@ -11,17 +12,16 @@ import java.util.List;
 public class QuestionDao {
     private final JdbcTemplate<Question> jdbcTemplate = new JdbcTemplate<>();
 
-    public void insert(Question question) {
-        String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?)";
+    public Question insert(String writer, String title, String contents) {
+        String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALUES (?, ?, ?, CURRENT_TIMESTAMP(), 0)";
+        KeyHolder keyHolder = new KeyHolder();
         PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setLong(1, question.getQuestionId());
-            pstmt.setString(2, question.getWriter());
-            pstmt.setString(3, question.getTitle());
-            pstmt.setObject(4, question.getCreatedDate());
-            pstmt.setString(5, question.getContents());
-            pstmt.setInt(6, question.getCountOfAnswer());
+            pstmt.setString(1, writer);
+            pstmt.setString(2, title);
+            pstmt.setObject(3, contents);
         };
-        jdbcTemplate.update(sql, pstmtSetter);
+        jdbcTemplate.update(sql, pstmtSetter, keyHolder);
+        return findByQuestionId((long) keyHolder.getId());
     }
 
     public void update(Question question) {

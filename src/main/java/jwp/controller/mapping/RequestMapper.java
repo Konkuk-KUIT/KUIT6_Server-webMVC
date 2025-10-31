@@ -17,6 +17,9 @@ public class RequestMapper implements ControllerMapping {
         mappings.put("/user/list", new ListUserController());
         mappings.put("/user/updateForm", new UpdateUserFormController());
         mappings.put("/user/update", new UpdateUserController());
+        mappings.put("/qna/form", new QuestionFormController());
+        mappings.put("/qna/create", new CreateQuestionController());
+        mappings.put("/qna/show", new QuestionShowController());
     }
 
     public static RequestMapper getInstance() {
