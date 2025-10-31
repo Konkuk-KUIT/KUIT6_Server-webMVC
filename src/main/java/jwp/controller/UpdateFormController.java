@@ -2,6 +2,7 @@ package jwp.controller;
 
 import jwp.enums.HttpUrl;
 import jwp.enums.JspUrl;
+import jwp.enums.ReqAttribute;
 import jwp.enums.UserParameter;
 import jwp.model.User;
 
@@ -18,7 +19,7 @@ public class UpdateFormController implements Controller {
     @Override
     public String service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        User user = (User)session.getAttribute("user");
+        User user = (User)session.getAttribute(ReqAttribute.USER.getValue());
         if(isSameUserWithSession(req, user))
             return HttpUrl.REDIRECT.getValue().concat(HttpUrl.ROOT.getValue());
         return JspUrl.UPDATE_FORM.getValue();

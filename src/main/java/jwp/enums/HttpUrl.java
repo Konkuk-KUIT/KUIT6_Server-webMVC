@@ -8,7 +8,10 @@ public enum HttpUrl {
     LOGOUT("/user/logout"),
     LIST("/user/list"),
     UPDATE_FORM("/user/updateForm"),
-    UPDATE("/user/update");
+    UPDATE("/user/update"),
+    QNA_FORM("/qna/form.html"),
+    QNA_CREATE("/qna/create"),
+    QNA_SHOW("/qna/show");
 
     private final String url;
 

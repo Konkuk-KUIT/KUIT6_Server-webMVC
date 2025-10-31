@@ -24,6 +24,9 @@ public class RequestMapper {
         controllers.put(HttpUrl.LIST.getValue(), new ListUserController());
         controllers.put(HttpUrl.UPDATE_FORM.getValue(), new UpdateFormController());
         controllers.put(HttpUrl.UPDATE.getValue(), new UpdateUserController());
+        controllers.put(HttpUrl.QNA_FORM.getValue(), new CreateQuestionFormController());
+        controllers.put(HttpUrl.QNA_CREATE.getValue(), new CreateQustionController());
+        controllers.put(HttpUrl.QNA_SHOW.getValue(), new ShowController());
     }
 
     public Controller getValue(String path) {

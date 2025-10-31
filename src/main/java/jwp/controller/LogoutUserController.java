@@ -1,6 +1,7 @@
 package jwp.controller;
 
 import jwp.enums.HttpUrl;
+import jwp.enums.ReqAttribute;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +15,7 @@ public class LogoutUserController implements Controller {
     @Override
     public String service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
-        session.removeAttribute("user");
+        session.removeAttribute(ReqAttribute.USER.getValue());
         return HttpUrl.REDIRECT.getValue().concat(HttpUrl.ROOT.getValue());
     }
 }
