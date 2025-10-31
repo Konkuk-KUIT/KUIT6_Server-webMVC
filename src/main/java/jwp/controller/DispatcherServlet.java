@@ -22,7 +22,7 @@ public class DispatcherServlet extends HttpServlet {
     }
 
     private void registerRoutes(){
-        routes.put("/",                    new HomeController());
+        routes.put("/", (Controller) new HomeController());
         routes.put("/user/login",          new LoginController());
         routes.put("/user/logout",         new LogoutController());
         routes.put("/user/create",         new CreateUserController());
@@ -51,7 +51,7 @@ public class DispatcherServlet extends HttpServlet {
         if (view.startsWith("redirect:")) {
             resp.sendRedirect(view.substring("redirect:".length()));
         } else {
-            String jsp = "/WEB-INF/views" + view + ".jsp";   // 예) "/user/list"
+            String jsp = "/WEB-INF/views" + view + ".jsp";
             req.getRequestDispatcher(jsp).forward(req, resp);
         }
 
