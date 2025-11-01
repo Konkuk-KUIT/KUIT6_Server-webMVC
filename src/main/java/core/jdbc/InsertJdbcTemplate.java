@@ -6,4 +6,8 @@ public class InsertJdbcTemplate {
     public void execute(String sql, PreparedStatementSetter pss) {
         tmpl.update(sql, pss);
     }
+
+    public void execute(String sql, PreparedStatementSetter pss, KeyHolder holder) {
+        tmpl.update(sql, pss, holder);
+    }
 }

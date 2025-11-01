@@ -1,7 +1,6 @@
 package core.jdbc;
 
 import org.apache.commons.dbcp2.BasicDataSource;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -13,6 +12,8 @@ public class ConnectionManager {
     private static final String DB_PW = "";
 
     private static BasicDataSource ds;
+    private static boolean initialized = false;
+
     public static DataSource getDataSource() {
         if (ds == null) {
             ds = new BasicDataSource();
