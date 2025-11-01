@@ -17,18 +17,21 @@ public class DispatcherServlet extends HttpServlet {
     private final Map<String, Controller> routes = new HashMap<>();
 
     @Override
-    public void init(){
+    public void init() {
         registerRoutes();
     }
 
-    private void registerRoutes(){
+    private void registerRoutes() {
         routes.put("/", (Controller) new HomeController());
-        routes.put("/user/login",          new LoginController());
-        routes.put("/user/logout",         new LogoutController());
-        routes.put("/user/create",         new CreateUserController());
-        routes.put("/user/list",           new ListUserController());
-        routes.put("/user/updateForm",     new UpdateUserFormController());
-        routes.put("/user/update",         new UpdateUserController());
+        routes.put("/user/login", new LoginController());
+        routes.put("/user/logout", new LogoutController());
+        routes.put("/user/create", new CreateUserController());
+        routes.put("/user/list", new ListUserController());
+        routes.put("/user/updateForm", new UpdateUserFormController());
+        routes.put("/user/update", new UpdateUserController());
+        routes.put("/qna/form", new CreateQuestionFormController());
+        routes.put("/qna/create", new CreateQuestionController());
+        routes.put("/qna/show", new ShowController());
     }
 
     @Override
@@ -36,9 +39,12 @@ public class DispatcherServlet extends HttpServlet {
         String path = req.getRequestURI().substring(req.getContextPath().length());
 
         Controller handler = routes.get(path);
-        if (handler == null) { resp.sendError(HttpServletResponse.SC_NOT_FOUND); return; }
+        if (handler == null) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
 
-        Map<String,Object> model = new HashMap<>();
+        Map<String, Object> model = new HashMap<>();
         String view;
         try {
             view = handler.handle(req, resp, model);

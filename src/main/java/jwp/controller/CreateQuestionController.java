@@ -14,23 +14,18 @@ public class CreateQuestionController implements Controller {
     private final QuestionDao questionDao = new QuestionDao();
 
     @Override
-    public String handle(HttpServletRequest req, HttpServletResponse resp, Map<String, Object> model) throws Exception {
+    public String handle(HttpServletRequest req, HttpServletResponse resp, Map<String, Object> model) {
         HttpSession session = req.getSession(false);
         User loginUser = (session == null) ? null : (User) session.getAttribute("user");
-        if (loginUser == null) {
-            resp.sendRedirect("/user/loginForm");
-            return null;
-        }
+        if (loginUser == null) return "redirect:/user/loginForm";
 
-        String title = req.getParameter("title");
+        String title    = req.getParameter("title");
         String contents = req.getParameter("contents");
-        String writer = loginUser.getUserId();
-
-        Question saved = questionDao.insert(writer, title, contents);
 
 
-        resp.sendRedirect("/home");
+        Question saved = questionDao.insert(loginUser.getUserId(), title, contents);
 
-        return null;
+
+        return "redirect:/qna/show?questionId=" + saved.getQuestionId();
     }
 }
