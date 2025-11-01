@@ -9,16 +9,18 @@ import java.util.List;
 
 public class JdbcTemplate<T> {
 
-    public void update(String sql, PreparedStatementSetter pstmtSetter) throws SQLException {
+    public void update(String sql, PreparedStatementSetter pstmtSetter) {
 
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmtSetter.setParameter(pstmt);
             pstmt.executeUpdate();
+        }catch (SQLException e) {
+            throw new DataAccessException(e);
         }
     }
 
-    public List<T> query(String sql, RowMapper<T> rowMapper) throws SQLException {
+    public List<T> query(String sql, RowMapper<T> rowMapper) {
         List<T> objects = new ArrayList<>();
 
         try (Connection conn = ConnectionManager.getConnection();
@@ -29,26 +31,27 @@ public class JdbcTemplate<T> {
                 T object = rowMapper.mapRow(rs);
                 objects.add(object);
             }
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
         }
         return objects;
     }
 
-    public T queryForObject(String sql, PreparedStatementSetter pss, RowMapper<T> rowMapper) throws SQLException {
-        T object = null;
-        ResultSet rs = null;
-
+    public T queryForObject(String sql, PreparedStatementSetter pss, RowMapper<T> rowMapper) {
         try (Connection conn = ConnectionManager.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
             pss.setParameter(pstmt);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                object = rowMapper.mapRow(rs);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rowMapper.mapRow(rs);
+                }
+                return null;
             }
-        } finally {
-            if (rs != null)
-                rs.close();
+
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
         }
-        return object;
     }
 
 }
