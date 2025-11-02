@@ -1,15 +1,11 @@
 package jwp.dao;
 
-import core.jdbc.ConnectionManager;
 import core.jdbc.JdbcTemplate;
 import core.jdbc.PreparedStatementSetter;
+import core.jdbc.RowMapper;
 import jwp.model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDao {
@@ -52,56 +48,29 @@ public class UserDao {
     // TODO findAll, findByUserId
 
     public List<User> findAll() throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        List<User> users = new ArrayList<>();
+        String sql = "SELECT * FROM USERS";
 
-        try {
-            conn = ConnectionManager.getConnection();
-            String sql = "SELECT * FROM USERS";
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
-            while (rs.next()) {
-                User user = new User(rs.getString("userId"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("email"));
+        RowMapper rowMapper = rs -> new User(rs.getString("userId"),
+                rs.getString("password"),
+                rs.getString("name"),
+                rs.getString("email"));
 
-                users.add(user);
-            }
-        }  finally {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        }
-        return users;
+        return jdbcTemplate.query(sql, rowMapper);
     }
 
     public User findByUserId(String userId) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
-        User foundUser = null;
+        String sql = "SELECT * FROM USERS WHERE userId = ?";
 
-        try {
-            conn = ConnectionManager.getConnection();
-            String sql = "SELECT * FROM USERS WHERE userId = ?";
-            pstmt = conn.prepareStatement(sql);
+        PreparedStatementSetter pstmtSetter = pstmt -> {
             pstmt.setString(1, userId);
-            rs = pstmt.executeQuery();
-            if (rs.next()) {
-                foundUser = new User(rs.getString("userId"),
-                        rs.getString("password"),
-                        rs.getString("name"),
-                        rs.getString("email"));
-            }
-        }  finally {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
-        }
-        return foundUser;
+        };
+
+        RowMapper rowMapper = rs -> new User(rs.getString("userId"),
+                rs.getString("password"),
+                rs.getString("name"),
+                rs.getString("email"));
+
+        return jdbcTemplate.queryForObject(sql, pstmtSetter, rowMapper);
     }
 
 }
