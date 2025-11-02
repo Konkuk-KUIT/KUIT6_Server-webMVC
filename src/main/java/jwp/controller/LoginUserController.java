@@ -1,7 +1,7 @@
 package jwp.controller;
 
-import core.db.MemoryUserRepository;
 import core.mvc.Controller;
+import jwp.dao.UserDao;
 import jwp.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 public class LoginUserController implements Controller {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        User user = MemoryUserRepository.getInstance().findUserById(req.getParameter("userId"));
+        User user = new UserDao().findByUserID(req.getParameter("userId"));
 
         // 사용자가 존재하고 비밀번호가 일치하면
         if (user != null && user.matchPassword(req.getParameter("password"))) {

@@ -2,8 +2,8 @@
 // 변경: public class ListUserController implements Controller
 package jwp.controller;
 
-import core.db.MemoryUserRepository;
 import core.mvc.Controller; // Controller 인터페이스 import
+import jwp.dao.UserDao;
 import jwp.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +20,7 @@ public class ListUserController implements Controller {
         Object user = session.getAttribute("user");
 
         if (user != null) {
-            Collection<User> users = MemoryUserRepository.getInstance().findAll();
+            Collection<User> users = new UserDao().findAll();
             req.setAttribute("users", users);
             // 직접 forward하지 않고, View 경로를 반환
             return "/user/list.jsp";

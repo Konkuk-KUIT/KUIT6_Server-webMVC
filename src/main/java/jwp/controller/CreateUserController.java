@@ -2,8 +2,8 @@
 // 변경: public class CreateUserController implements Controller
 package jwp.controller;
 
-import core.db.MemoryUserRepository;
 import core.mvc.Controller; // Controller 인터페이스 import
+import jwp.dao.UserDao;
 import jwp.model.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +17,7 @@ public class CreateUserController implements Controller {
                 req.getParameter("password"),
                 req.getParameter("name"),
                 req.getParameter("email"));
-        MemoryUserRepository.getInstance().addUser(user);
+        new UserDao().insert(user);
         System.out.println("user 회원가입 완료");
 
         // 직접 redirect하지 않고, View 경로를 반환
