@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor: change controllers for use Controller interface and create ForwardingController for handle forward jsp">
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: create JdbcTemplate.java and PreparedStatementSetter.java">
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +76,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -107,27 +107,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.WebServerLauncher.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.WebServerLauncher.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hyungyu-week4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/lib" />
@@ -230,7 +231,9 @@
       <updated>1760073220701</updated>
       <workItem from="1760073221474" duration="74000" />
       <workItem from="1760073304811" duration="8302000" />
-      <workItem from="1760089976639" duration="9395000" />
+      <workItem from="1760089976639" duration="9845000" />
+      <workItem from="1762009607542" duration="4133000" />
+      <workItem from="1762064366837" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -344,11 +347,62 @@
       <option name="project" value="LOCAL" />
       <updated>1760098426542</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor: use static">
+      <option name="closed" value="true" />
+      <created>1760099467220</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1760099467220</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: create UserDao">
+      <option name="closed" value="true" />
+      <created>1762064598750</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1762064598750</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: activate contextInitialized function">
+      <option name="closed" value="true" />
+      <created>1762065836795</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1762065836795</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: create JdbcTemplate.java">
+      <option name="closed" value="true" />
+      <created>1762065865401</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1762065865401</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: create JdbcTemplate.java and PreparedStatementSetter.java">
+      <option name="closed" value="true" />
+      <created>1762065914451</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1762065914451</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: create CreateUserController" />
@@ -361,7 +415,12 @@
     <MESSAGE value="fix: 회원 목록 및 개인정보 수정 보안 강화" />
     <MESSAGE value="feat: create Controller, RequestMapper, DispatcherServlet" />
     <MESSAGE value="refactor: change controllers for use Controller interface and create ForwardingController for handle forward jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: change controllers for use Controller interface and create ForwardingController for handle forward jsp" />
+    <MESSAGE value="refactor: use static" />
+    <MESSAGE value="feat: create UserDao" />
+    <MESSAGE value="feat: activate contextInitialized function" />
+    <MESSAGE value="feat: create JdbcTemplate.java" />
+    <MESSAGE value="feat: create JdbcTemplate.java and PreparedStatementSetter.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create JdbcTemplate.java and PreparedStatementSetter.java" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
