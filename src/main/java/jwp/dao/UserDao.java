@@ -1,8 +1,6 @@
 package jwp.dao;
 
-import core.jdbc.JdbcTemplate;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
+import core.jdbc.*;
 import jwp.model.User;
 
 import java.sql.SQLException;
@@ -11,7 +9,6 @@ import java.util.List;
 public class UserDao {
     //Todo: insert, update, delete 기능
     private final JdbcTemplate<User> jdbcTemplate = new JdbcTemplate<>();
-
 
     public void insert(User user) throws SQLException {
         String sql = "INSERT INTO USERS VALUES(?, ?, ?, ?)";
