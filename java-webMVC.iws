@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor: use try's automatic resource management" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor: change JdbcTemplate to use generic type">
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/KeyHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ShowQuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UserSessionUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,8 +87,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -230,7 +244,7 @@
       <workItem from="1760073304811" duration="8302000" />
       <workItem from="1760089976639" duration="9845000" />
       <workItem from="1762009607542" duration="4133000" />
-      <workItem from="1762064366837" duration="4782000" />
+      <workItem from="1762064366837" duration="9564000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -424,7 +438,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762101989299</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="refactor: change JdbcTemplate to use generic type">
+      <option name="closed" value="true" />
+      <created>1762102380687</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1762102380687</updated>
+    </task>
+    <task id="LOCAL-00026" summary="refactor: change JdbcTemplate to use generic type">
+      <option name="closed" value="true" />
+      <created>1762105085472</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1762105085472</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +492,8 @@
     <MESSAGE value="feat: create RowMapper.java" />
     <MESSAGE value="feat: use query and queryForObject in UserDao.java" />
     <MESSAGE value="refactor: use try's automatic resource management" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: use try's automatic resource management" />
+    <MESSAGE value="refactor: change JdbcTemplate to use generic type" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: change JdbcTemplate to use generic type" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

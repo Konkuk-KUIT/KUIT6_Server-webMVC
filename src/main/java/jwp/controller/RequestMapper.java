@@ -19,6 +19,11 @@ public class RequestMapper {
         controllers.put("/user/loginForm", new ForwardingController("/user/login.jsp"));
         controllers.put("/user/signupForm", new ForwardingController("/user/form.jsp"));
         controllers.put("/user/loginFailed", new ForwardingController("/user/loginFailed.jsp"));
+
+        controllers.put("/qna/form", new CreateQuestionFormController());
+        controllers.put("/qna/create", new CreateQuestionController());
+
+        controllers.put("/qna/show", new ShowQuestionController());
     }
 
     public Controller getController(String url) {
