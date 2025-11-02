@@ -14,6 +14,11 @@ public class RequestMapper {
         controllerMap.put("/user/logout", new LogoutUserController());
         controllerMap.put("/user/update", new UpdateUserController());
         controllerMap.put("/user/updateForm", new UpdateUserFormController());
+        controllerMap.put("/user/create", new CreateUserController());
+        controllerMap.put("/qna/create", new CreateQuestionController());
+        controllerMap.put("/qna/form", new CreateQuestionFormController());
+        controllerMap.put("/qna/show", new ShowQuestionController());
+
     }
 
     public Controller findController(String url) {

@@ -1,9 +1,22 @@
 package core.jdbc;
 
-public class InsertJdbcTemplate {
-    private final JdbcTemplate<Void> tmpl = new JdbcTemplate<>();
+import java.sql.*;
 
-    public void execute(String sql, PreparedStatementSetter pss) {
-        tmpl.update(sql, pss);
+public class InsertJdbcTemplate {
+    public void execute(String sql, PreparedStatementSetter pss, KeyHolder keyHolder) {
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            pss.setParameter(pstmt);
+            pstmt.executeUpdate();
+
+            try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    keyHolder.setId(rs.getInt(1));
+                }
+            }
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
     }
 }

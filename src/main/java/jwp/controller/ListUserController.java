@@ -1,25 +1,29 @@
 package jwp.controller;
 
-import core.db.MemoryUserRepository;
+import jwp.dao.UserDao;
 import jwp.model.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.*;
+import java.util.List;
 
-public class ListUserController  implements Controller {
+public class ListUserController implements Controller {
+
+    private final UserDao userDao = new UserDao();
+
     @Override
-    public String process(HttpServletRequest rq, HttpServletResponse resp) throws Exception {
+    public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
-        HttpSession session = rq.getSession();
+        HttpSession session = req.getSession();
         Object user = session.getAttribute("user");
+
         if (user != null) {
-            Collection<User> users = MemoryUserRepository.getInstance().findAll();
-            rq.setAttribute("users",users); // servlet -> jsp 데이터 전달
+            List<User> users = userDao.findAll();
+            req.setAttribute("users", users);
             return "/user/list.jsp";
         }
 
         return "redirect:/";
     }
-
 }

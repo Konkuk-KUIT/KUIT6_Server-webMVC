@@ -1,30 +1,34 @@
 package jwp.controller;
 
-import core.db.MemoryUserRepository;
+import jwp.dao.UserDao;
 import jwp.model.User;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class UpdateUserController implements Controller {
-    @Override
-    public String process(HttpServletRequest rq, HttpServletResponse resp) throws Exception {
-        HttpSession session = rq.getSession();
-        String userId = rq.getParameter("userId");
-        User settionUser = (User) session.getAttribute("user");
+    private final UserDao userDao = new UserDao();
 
-        // 세션 존재하고, 세션의 user와 수정하는 user가 같을때만 redirect
-        if(settionUser!=null && userId.equals(settionUser.getUserId())){
-            User updateUser = new User(userId,
-                    rq.getParameter("password"),
-                    rq.getParameter("name"),
-                    rq.getParameter("email"));
-            MemoryUserRepository.getInstance().changeUserInfo(updateUser);
+    @Override
+    public String process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        HttpSession session = req.getSession();
+        String userId = req.getParameter("userId");
+        User sessionUser = (User) session.getAttribute("user");
+
+        if (sessionUser != null && userId.equals(sessionUser.getUserId())) {
+            User updatedUser = new User(
+                    userId,
+                    req.getParameter("password"),
+                    req.getParameter("name"),
+                    req.getParameter("email")
+            );
+
+            userDao.update(updatedUser);
+
             return "redirect:/user/list";
         }
 
         return "redirect:/";
     }
-
 }
-
