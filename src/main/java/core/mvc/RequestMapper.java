@@ -16,6 +16,8 @@ public class RequestMapper {
         mappingController.put("/user/logout", new LogoutController());
         mappingController.put("/user/updateForm", new UpdateUserFormController());
         mappingController.put("/user/update", new UpdateUserInfoController());
+        mappingController.put("/qna/form", new CreateQuestionFormController());
+        mappingController.put("/qna/create", new CreateQuestionController());
     }
 
     public Controller get(String path) {

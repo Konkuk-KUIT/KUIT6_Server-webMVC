@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/user/signup")
+//@WebServlet("/user/signup")
 //public class CreateUserController extends HttpServlet {
 public class CreateUserController implements Controller {
 //    @Override

@@ -1,7 +1,11 @@
 package jwp.dao;
 
 import core.jdbc.ConnectionManager;
+import core.jdbc.JdbcTemplate;
+import core.jdbc.PreparedStatementSetter;
+import core.jdbc.RowMapper;
 import jwp.model.Question;
+import jwp.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionDao {
+    private final JdbcTemplate<Question> jdbcTemplate = new JdbcTemplate<>();
+
     public List<Question> findAll() throws SQLException {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -30,7 +36,7 @@ public class QuestionDao {
                         rs.getString("writer"),
                         rs.getString("title"),
                         rs.getString("contents"),
-                        rs.getString("createdDate"),
+                        rs.getTimestamp("createdDate"),
                         rs.getInt("countOfAnswer"));
                 questions.add(qs); //만든 question 객체 list에 추가
             }
@@ -44,5 +50,43 @@ public class QuestionDao {
                 rs.close();
         }
         return questions;
+    }
+
+    public Question insert(Question question) throws SQLException{
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+
+        try {
+            conn = ConnectionManager.getConnection();
+//            String sql = "INSERT INTO QUESTIONS VALUES (?, ?, ?)";
+            String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate) VALUES (?, ?, ?, CURRENT_TIMESTAMP)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, question.getWriter());
+            pstmt.setString(2, question.getTitle());
+            pstmt.setString(3, question.getContents());
+            pstmt.executeUpdate();
+        } finally{
+            if(pstmt!=null)
+                pstmt.close();
+            if(conn!=null)
+                conn.close();
+        }
+        return question;
+    }
+
+    public Question findByQuestionId(Long questionId) throws SQLException {
+        String sql = "SELECT * FROM QUESTIONS WHERE questionId = ?";
+        PreparedStatementSetter ps = pstmt -> {
+            pstmt.setLong(1, questionId);
+        };
+        RowMapper<Question> rowMapper = rs -> new Question(
+                rs.getLong("questionId"),
+                rs.getString("writer"),
+                rs.getString("title"),
+                rs.getString("contents"),
+                rs.getTimestamp("createdDate"),
+                rs.getInt("countOfAnswer")
+        );
+        return jdbcTemplate.queryForObject(sql, ps, rowMapper);
     }
 }
