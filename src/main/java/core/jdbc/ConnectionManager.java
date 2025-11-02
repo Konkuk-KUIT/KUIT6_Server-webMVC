@@ -13,6 +13,7 @@ public class ConnectionManager {
     private static final String DB_PW = "";
 
     private static BasicDataSource ds;
+
     public static DataSource getDataSource() {
         if (ds == null) {
             ds = new BasicDataSource();

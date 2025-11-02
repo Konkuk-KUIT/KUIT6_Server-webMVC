@@ -11,60 +11,48 @@ import java.util.List;
 
 public class JdbcTemplate {
     public void update(String sql, PreparedStatementSetter pstmtSetter) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
 
-        try {
-            conn = ConnectionManager.getConnection();
-            pstmt = conn.prepareStatement(sql);
+        try (
+                Connection conn = ConnectionManager.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql)
+        ) {
             pstmtSetter.setParameters(pstmt);
             pstmt.executeUpdate();
-        } finally {
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
         }
     }
 
     public List<User> query(String sql, RowMapper rowMapper) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
         List<User> users = new ArrayList<>();
 
-        try {
-            conn = ConnectionManager.getConnection();
-            pstmt = conn.prepareStatement(sql);
-            rs = pstmt.executeQuery();
+        try (
+                Connection conn = ConnectionManager.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                ResultSet rs = pstmt.executeQuery();
+        ) {
             while (rs.next()) {
                 User user = rowMapper.mapRow(rs);
                 users.add(user);
             }
-        }  finally {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
         }
         return users;
     }
 
     public User queryForObject(String sql, PreparedStatementSetter pstmtSetter, RowMapper rowMapper) throws SQLException {
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet rs = null;
         User user = null;
+        ResultSet rs = null;
 
-        try {
-            conn = ConnectionManager.getConnection();
-            pstmt = conn.prepareStatement(sql);
-            pstmtSetter.setParameters(pstmt);
+        try (
+                Connection conn = ConnectionManager.getConnection();
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+        ) {
             rs = pstmt.executeQuery();
+            pstmtSetter.setParameters(pstmt);
+
             if (rs.next()) {
                 user = rowMapper.mapRow(rs);
             }
-        }  finally {
-            if (rs != null) rs.close();
-            if (pstmt != null) pstmt.close();
-            if (conn != null) conn.close();
+        } finally {
+            if (rs != null) {rs.close();}
         }
         return user;
     }
