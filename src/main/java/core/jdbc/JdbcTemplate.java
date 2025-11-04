@@ -1,7 +1,5 @@
 package core.jdbc;
 
-import jwp.model.User;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,44 +9,59 @@ import java.util.List;
 
 public class JdbcTemplate<T> {
 
-    public void update(String sql, PreparedStatementSetter setter) throws SQLException {
-        try(Connection con = ConnectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);) {
-            setter.setParameters(ps);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void update(String sql, PreparedStatementSetter pstmtSetter) throws SQLException {
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmtSetter.setParameters(pstmt);
+            pstmt.executeUpdate();
         }
     }
 
-    public List<T> query(String sql, RowMapper<T> rowMapper) throws SQLException {
-        List<T> users = new ArrayList<T>();
-        try(Connection con = ConnectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery()) {
+    public <T> List<T> query(String sql, RowMapper<T> rowMapper) throws SQLException {
+        List<T> objects = new ArrayList<>();
+
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery();) {
             while (rs.next()) {
-                T user = rowMapper.mapRow(rs);
-                users.add(user);
+                T object = rowMapper.mapRow(rs);
+                objects.add(object);
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
-        return users;
+        return objects;
     }
 
-    public T queryForObject(String sql, PreparedStatementSetter setter, RowMapper<T> rowMapper) throws SQLException {
-        T user = null;
-        try(Connection con = ConnectionManager.getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery()) {
-            setter.setParameters(ps);
-            if (rs.next()) {
-                user = rowMapper.mapRow(rs);
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public T queryForObject(String sql, PreparedStatementSetter pstmtSetter, RowMapper<T> rowMapper) throws SQLException {
+        ResultSet rs = null;
+        T object = null;
 
-        return user;
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmtSetter.setParameters(pstmt);
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                object = rowMapper.mapRow(rs);
+            }
+        } finally {
+            if (rs != null)
+                rs.close();
+        }
+        return object;
+    }
+
+    public void update(String sql, PreparedStatementSetter pstmtSetter, KeyHolder keyHolder) throws SQLException {
+        ResultSet rs = null;
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            pstmtSetter.setParameters(pstmt);
+            pstmt.executeUpdate();
+            rs = pstmt.getGeneratedKeys();
+            if (rs.next()) {
+                keyHolder.setId((int) rs.getLong(1));
+            }
+        } finally {
+            if (rs != null)
+                rs.close();
+        }
     }
 }
