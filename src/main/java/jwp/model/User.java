@@ -1,6 +1,16 @@
 package jwp.model;
 
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "USERS")
+@NoArgsConstructor
+@Setter
 public class User {
+    @Id
     private String userId;
     private String password;
     private String name;
