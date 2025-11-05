@@ -1,68 +1,34 @@
 package jwp.dao;
 
-import core.jdbc.JdbcTemplate;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
 import jwp.model.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Repository
+@RequiredArgsConstructor // final 필드를 가진 생성자를 자동으로 만들어줌 -> DI
 public class UserDao {
 
-    private final JdbcTemplate<User> jdbcTemplate = new JdbcTemplate<>();
+    private final EntityManager em;
 
-    public void insert(User user) throws SQLException {
-        String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?)";
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setString(1, user.getUserId());
-            pstmt.setString(2, user.getPassword());
-            pstmt.setString(3, user.getName());
-            pstmt.setString(4, user.getEmail());
-        };
-        jdbcTemplate.update(sql, pstmtSetter);
+    @Transactional // DB 변경은 꼭 트랜잭션 안에서...
+    public void insert(User user) {
+        em.persist(user); // SQL문을 직접 작성하지 않음. JPA가 객체와 DB를 자동으로 매핑
     }
 
-    public void update(User user) throws SQLException {
-        String sql = "UPDATE USERS SET password = ?, name = ?, email = ? WHERE userId = ?";
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setString(1, user.getPassword());
-            pstmt.setString(2, user.getName());
-            pstmt.setString(3, user.getEmail());
-            pstmt.setString(4, user.getUserId());
-        };
-        jdbcTemplate.update(sql, pstmtSetter);
+    public void update(User user) {
+        em.merge(user); // update 할 때. user 객체 안의 값들을 알아서 보고 DB에 반영
     }
 
-    public void delete(User user) throws SQLException {
-        String sql = "DELETE FROM USERS WHERE userId = ?";
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setString(1, user.getUserId());
-        };
-        jdbcTemplate.update(sql, pstmtSetter);
+    public List<User> findAll() {
+                // 결과를 User.class 타입으로 매핑
+        return em.createQuery("select u from User u", User.class).getResultList();
     }
 
-    public List<User> findAll() throws SQLException {
-        String sql = "SELECT * FROM USERS";
-        RowMapper rowMapper = rs -> new User(rs.getString("userId"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("email"));
-        return jdbcTemplate.query(sql, rowMapper);
-    }
-
-    public User findByUserId(String userId) throws SQLException {
-        String sql = "SELECT userId, password, name, email FROM USERS WHERE userId=?";
-
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setString(1, userId);
-        };
-
-        RowMapper rowMapper = rs -> new User(rs.getString("userId"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("email"));
-
-        return jdbcTemplate.queryForObject(sql, pstmtSetter, rowMapper);
+    public User findByUserId(String userId) {
+        return em.find(User.class, userId); // PK로 엔티티 조회할 때 사용
     }
 }
