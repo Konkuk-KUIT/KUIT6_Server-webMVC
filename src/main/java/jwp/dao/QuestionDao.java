@@ -1,58 +1,32 @@
 package jwp.dao;
 
 import core.db.Keyholder;
-import core.jdbc.JdbcTemplate;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
+
 import jwp.model.Question;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
-
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Repository
+@RequiredArgsConstructor
 public class QuestionDao {
-    private final JdbcTemplate<Question> jdbcTemplate = new JdbcTemplate();
+    private final EntityManager em;
+    private final Keyholder keyHolder = new Keyholder();
 
-    public Long insert(Question question) {
-        String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALUES(?, ?, ?, ?, ?)";        PreparedStatementSetter pstmtSetter = pstmt ->{
-            pstmt.setString(1,question.getWriter());
-            pstmt.setString(2,question.getTitle());
-            pstmt.setString(3,question.getContents());
-            pstmt.setTimestamp(4,question.getCreatedDateAsTimestamp());
-            pstmt.setInt(5,question.getCountOfAnswer());
-
-        };
-        Keyholder keyHolder = new Keyholder();
-        Long questionId = jdbcTemplate.update(sql, pstmtSetter, keyHolder);
-
-        return questionId;
+    @Transactional
+    public void insert(Question question){
+        em.persist(question);
     }
 
     public List<Question> findAll(){
-        String sql = "SELECT * FROM QUESTIONS";
-        RowMapper<Question> rowMapper = rs -> new Question(
-                rs.getLong("questionId"),
-                rs.getString("writer"),
-                rs.getString("title"),
-                rs.getString("contents"),
-                rs.getTimestamp("createdDate").toLocalDateTime(),
-                rs.getInt("countOfAnswer")
-        );
-        return jdbcTemplate.query(sql, rowMapper);
+        return em.createQuery("select q from Question q", Question.class).getResultList();
     }
+
     public Question findById(Long questionId) {
-        String sql = "SELECT * FROM QUESTIONS WHERE questionId = ?";
-        PreparedStatementSetter ps = pstmt -> {
-            pstmt.setLong(1, questionId);
-        };
-        RowMapper<Question> rowMapper = rs -> new Question(
-                rs.getLong("questionId"),
-                rs.getString("writer"),
-                rs.getString("title"),
-                rs.getString("contents"),
-                rs.getTimestamp("createdDate").toLocalDateTime(),
-                rs.getInt("countOfAnswer")
-        );
-        return jdbcTemplate.queryForObject(sql, ps, rowMapper);
+        return em.find(Question.class, questionId);
     };
 
 }

@@ -4,34 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="fix: MVC 패턴 이용!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/db/Keyholder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ShowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
+    <list default="true" id="b5fe9093-03b3-4025-b7e9-5c54179d0ecf" name="Changes" comment="feat: 3단계 미션">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LogOutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UpdateUserFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/CreateUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/DispatcherServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/DispatcherServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/ListUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LogOutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/RequestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/RequestMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/WEB-INF/classes/jwp/controller/UpdateUserFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/qna/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/qna/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/qna/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/qna/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +136,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "gyuun/week4",
+    "git-widget-placeholder": "gyuun/wee6",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/gyuun/Documents/project/KUIT_SERVER/KUIT6_Server-webMVCVer 오후 4.47.06",
     "node.js.detected.package.eslint": "true",
@@ -167,10 +144,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -184,6 +161,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.WebServerLauncher">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
@@ -206,7 +188,7 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="WebServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WebServerLauncher" />
+      <option name="MAIN_CLASS_NAME" value="jwp.WebServerLauncher" />
       <module name="KUIT6_Server-webMVCVer 오후 4.47.06.java-webMVC.main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -276,7 +258,7 @@
     </attachedChunks>
   </component>
   <component name="StructureViewState">
-    <option name="selectedTab" value="JSP" />
+    <option name="selectedTab" value="Logical" />
   </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
@@ -302,7 +284,9 @@
       <workItem from="1760027189278" duration="29937000" />
       <workItem from="1761739591753" duration="61000" />
       <workItem from="1761739665834" duration="1381000" />
-      <workItem from="1761754086196" duration="17611000" />
+      <workItem from="1761754086196" duration="17835000" />
+      <workItem from="1761881459722" duration="4142000" />
+      <workItem from="1762163745203" duration="31300000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 실습">
       <option name="closed" value="true" />
@@ -376,7 +360,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760088259491</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: 3단계 미션">
+      <option name="closed" value="true" />
+      <created>1761815452779</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1761815452779</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 3단계 미션">
+      <option name="closed" value="true" />
+      <created>1761815456612</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1761815456612</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +402,8 @@
     <MESSAGE value="fix: 개인정보 수정 보안 강화!" />
     <MESSAGE value="init: 초기 설정" />
     <MESSAGE value="fix: MVC 패턴 이용!" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: MVC 패턴 이용!" />
+    <MESSAGE value="feat: 3단계 미션" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 3단계 미션" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>
