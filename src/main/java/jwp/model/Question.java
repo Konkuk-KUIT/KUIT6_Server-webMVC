@@ -1,11 +1,22 @@
 package jwp.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Getter
+@Entity
+@Table(name = "QUESTIONS")
+@NoArgsConstructor
 public class Question {
 
+    @Id
     private int questionId;
     private String writer;
     private String title;
@@ -29,30 +40,6 @@ public class Question {
         this.contents = contents;
         this.createdDate = Date.valueOf(LocalDate.now());
         this.countOfAnswer = countOfAnswer;
-    }
-
-    public int getQuestionId() {
-        return questionId;
-    }
-
-    public String getWriter() {
-        return writer;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getContents() {
-        return contents;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public int getCountOfAnswer() {
-        return countOfAnswer;
     }
 
     public void updateTitleAndContents(String title, String contents) {
