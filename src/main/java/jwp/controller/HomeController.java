@@ -1,18 +1,26 @@
 package jwp.controller;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import jwp.service.QuestionService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@WebServlet("/")
-public class HomeController extends HttpServlet {
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("/home.jsp");
-		rd.forward(req, resp);
+
+@Controller
+@RequiredArgsConstructor
+public class HomeController {
+	private final QuestionService questionService;
+
+	@GetMapping("/")
+	public String home(Model model) {
+		model.addAttribute("questions", questionService.findAll());
+		return "home";
 	}
+//	private final QuestionService questionService;
+//	@GetMapping("/")
+//	public String home(Model model) {
+//		model.addAttribute("questions", questionService.findAll());
+//		return "home";
+//	}
 }
