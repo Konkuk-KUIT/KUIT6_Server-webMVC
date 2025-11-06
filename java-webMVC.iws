@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor: change JdbcTemplate to use generic type">
-      <change afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/KeyHolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/ShowQuestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UserSessionUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/model/Question.java" afterDir="false" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: Implement Q&amp;A feature (Missions 0-3)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +69,29 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-webMVC" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-webMVC" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-webMVC" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="runtimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="java-webMVC" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -93,6 +107,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="hyungyu-week5" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ModuleEditorState">
@@ -118,28 +137,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.WebServerLauncher.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hyungyu-week4&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.WebServerLauncher.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.KUIT6_Server-webMVC [:WebServerLauncher.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "hyungyu-week6",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/lib" />
@@ -214,8 +233,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.29188.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.29188.11" />
       </set>
     </attachedChunks>
   </component>
@@ -244,7 +263,10 @@
       <workItem from="1760073304811" duration="8302000" />
       <workItem from="1760089976639" duration="9845000" />
       <workItem from="1762009607542" duration="4133000" />
-      <workItem from="1762064366837" duration="9564000" />
+      <workItem from="1762064366837" duration="10138000" />
+      <workItem from="1762168256713" duration="403000" />
+      <workItem from="1762168715236" duration="1035000" />
+      <workItem from="1762443752200" duration="2278000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -454,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762105085472</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: Implement Q&amp;A feature (Missions 0-3)">
+      <option name="closed" value="true" />
+      <created>1762107116946</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1762107116946</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +523,8 @@
     <MESSAGE value="feat: use query and queryForObject in UserDao.java" />
     <MESSAGE value="refactor: use try's automatic resource management" />
     <MESSAGE value="refactor: change JdbcTemplate to use generic type" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: change JdbcTemplate to use generic type" />
+    <MESSAGE value="feat: Implement Q&amp;A feature (Missions 0-3)" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Implement Q&amp;A feature (Missions 0-3)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
