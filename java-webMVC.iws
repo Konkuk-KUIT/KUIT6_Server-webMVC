@@ -4,12 +4,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="feat: Implement Q&amp;A feature (Missions 0-3)">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="build: gradle and properties setting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WebServerLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/WebServerLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/JdbcTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/KeyHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/PreparedStatementSetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/jdbc/RowMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/DispatcherServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ForwardingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/ListUserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/RequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/mvc/RequestMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/WEB-INF/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/css/styles2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/styles2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/img/KUIT.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/KUIT.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/img/picture.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/img/picture.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/include/header.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/header.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/include/navigation.jspf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/include/navigation.jspf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/qna/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/qna/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/qna/show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/qna/show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/user/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/user/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/user/loginFailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/loginFailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/user/updateForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/updateForm.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +190,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/webapp/WEB-INF/lib" />
     </key>
   </component>
@@ -186,7 +216,7 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="WebServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="WebServerLauncher" />
+      <option name="MAIN_CLASS_NAME" value="jwp.WebServerLauncher" />
       <module name="org.example.java-webMVC.main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -266,7 +296,7 @@
       <workItem from="1762064366837" duration="10138000" />
       <workItem from="1762168256713" duration="403000" />
       <workItem from="1762168715236" duration="1035000" />
-      <workItem from="1762443752200" duration="2278000" />
+      <workItem from="1762443752200" duration="4434000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -484,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762107116946</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="build: gradle and properties setting">
+      <option name="closed" value="true" />
+      <created>1762447381859</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1762447381859</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -524,7 +562,8 @@
     <MESSAGE value="refactor: use try's automatic resource management" />
     <MESSAGE value="refactor: change JdbcTemplate to use generic type" />
     <MESSAGE value="feat: Implement Q&amp;A feature (Missions 0-3)" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Implement Q&amp;A feature (Missions 0-3)" />
+    <MESSAGE value="build: gradle and properties setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: gradle and properties setting" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

@@ -1,4 +1,6 @@
-package jwp.controller;
+package core.mvc;
+
+import jwp.controller.*;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -92,7 +92,7 @@
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="homebrew-17" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/webapp/WEB-INF/classes" />
+    <output url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/classes" />
   </component>
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
