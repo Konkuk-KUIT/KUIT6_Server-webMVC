@@ -1,21 +1,23 @@
 package jwp.controller;
 
-import core.mvc.Controller;
 import jwp.dao.QuestionDao;
 import jwp.model.Question;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+@Controller
+@RequiredArgsConstructor
+public class ShowQuestionController {
 
-public class ShowQuestionController implements Controller {
+    private final QuestionDao questionDao;
 
-    private final QuestionDao questionDao = new QuestionDao();
-
-    @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        String questionId = req.getParameter("questionId");
-        Question question = questionDao.findByQuestionId(Integer.parseInt(questionId));
-        req.setAttribute("question", question);
-        return "/qna/show.jsp";
+    @GetMapping("/qna/show")
+    public String showQuestion(@RequestParam int questionId, Model model) {
+        Question question = questionDao.findByQuestionId(questionId);
+        model.addAttribute("question", question);
+        return "/qna/show";
     }
 }

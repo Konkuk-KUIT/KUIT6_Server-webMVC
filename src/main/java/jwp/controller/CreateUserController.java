@@ -1,22 +1,19 @@
 package jwp.controller;
 
-import core.mvc.Controller;
 import jwp.dao.UserDao;
 import jwp.model.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+@Controller
+@RequiredArgsConstructor
+public class CreateUserController {
 
-public class CreateUserController implements Controller {
+    private final UserDao userDao;
 
-    private final UserDao userDao = new UserDao();
-
-    @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        User user = new User(req.getParameter("userId"),
-                req.getParameter("password"),
-                req.getParameter("name"),
-                req.getParameter("email"));
+    @PostMapping("/user/signup")
+    public String createUser(User user) {
         userDao.insert(user);
         System.out.println("user 회원가입 완료");
         return "redirect:/user/list";

@@ -1,19 +1,18 @@
 package jwp.controller;
 
-import core.mvc.Controller;
 import jwp.util.UserSessionUtils;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class CreateQuestionFormController implements Controller {
+@Controller
+public class CreateQuestionFormController {
 
-    @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        HttpSession session = req.getSession();
-        if (UserSessionUtils.isLogined(session)) {          // 회원만 질문 등록 가능
-            return "/qna/form.jsp";
+    @GetMapping("/qna/form")
+    public String showQuestionForm(HttpSession session) {
+        if (UserSessionUtils.isLogined(session)) {  // 회원만 질문 등록 가능
+            return "/qna/form";
         }
         return "redirect:/user/loginForm";
     }

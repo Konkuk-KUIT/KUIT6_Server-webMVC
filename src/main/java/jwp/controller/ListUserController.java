@@ -1,23 +1,25 @@
 package jwp.controller;
 
-import core.mvc.Controller;
 import jwp.dao.UserDao;
 import jwp.util.UserSessionUtils;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class ListUserController implements Controller {
+@Controller
+@RequiredArgsConstructor
+public class ListUserController {
 
-    private final UserDao userDao = new UserDao();
+    private final UserDao userDao;
 
-    @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        HttpSession session = req.getSession();
+    @GetMapping("/user/list")
+    public String listUsers(Model model, HttpSession session) {
         if (UserSessionUtils.isLogined(session)) {
-            req.setAttribute("users", userDao.findAll());
-            return "/user/list.jsp";
+            model.addAttribute("users", userDao.findAll());
+            return "/user/list";
         }
         return "redirect:/user/loginForm";
     }
