@@ -15,7 +15,7 @@
                 <article class="article">
                     <div class="article-header">
                         <div class="article-header-thumb">
-                            <img src="../img/picture.jpeg" class="article-author-thumb" alt="">
+                            <img src="../../../../resources/static/img/picture.jpeg" class="article-author-thumb" alt="">
                         </div>
                         <div class="article-header-text">
                           <!-- 사용자 프로필 추가 할거면 span -> a 태그로 바꾸고 API 연결 -->
@@ -56,7 +56,7 @@
                             <article class="article" id="answer-1405">
                                 <div class="article-header">
                                     <div class="article-header-thumb">
-                                        <img src="../img/picture.jpeg" class="article-author-thumb" alt="">
+                                        <img src="../../../../resources/static/img/picture.jpeg" class="article-author-thumb" alt="">
                                     </div>
                                     <div class="article-header-text">
                                         <span class="article-author-name">이윤정</span>
@@ -87,7 +87,7 @@
                             <article class="article" id="answer-1406">
                                 <div class="article-header">
                                     <div class="article-header-thumb">
-                                        <img src="../img/picture.jpeg" class="article-author-thumb" alt="">
+                                        <img src="../../../../resources/static/img/picture.jpeg" class="article-author-thumb" alt="">
                                     </div>
                                     <div class="article-header-text">
                                         <span class="article-author-name">함형주</span>
@@ -132,6 +132,6 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../../../resources/static/js/scripts.js"></script>
   </body>
 </html>
