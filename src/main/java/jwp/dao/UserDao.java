@@ -1,68 +1,38 @@
 package jwp.dao;
 
-import core.jdbc.InsertJdbcTemplate;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
-import core.jdbc.SelectJdbcTemplate;
-import core.jdbc.UpdateJdbcTemplate;
-import jwp.model.User;
 
+import jwp.model.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import java.sql.SQLException;
 import java.util.List;
 
+@Repository
+@RequiredArgsConstructor
 public class UserDao {
-    private final InsertJdbcTemplate insertTpl = new InsertJdbcTemplate();
-    private final UpdateJdbcTemplate updateTpl = new UpdateJdbcTemplate();
-    private final SelectJdbcTemplate<User> selectTpl = new SelectJdbcTemplate<>();
 
+    private final EntityManager em;
+
+    @Transactional
     public void insert(User user) {
-        String sql = "INSERT INTO USERS VALUES (?,?,?,?)";
-        insertTpl.execute(sql, ps -> {
-            ps.setString(1, user.getUserId());
-            ps.setString(2, user.getPassword());
-            ps.setString(3, user.getName());
-            ps.setString(4, user.getEmail());
-        });
+        em.persist(user);
+    }
+
+    public void update(User user) {
+        em.merge(user);
 
     }
 
-    public void update(User user)  {
-        String sql = "UPDATE USERS SET password =?, name =?, email =? WHERE userId =?";
-        updateTpl.execute(sql, ps -> {
-            ps.setString(1, user.getPassword());
-            ps.setString(2, user.getName());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getUserId());
-        });
-
-    }
-
-    public void delete(User user)  {
-        String sql = "DELETE FROM USERS WHERE userId =?";
-        updateTpl.execute(sql, ps -> ps.setString(1, user.getUserId()));
-
-    }
-
-    public List<User> findAll()  {
-        String sql = "SELECT * FROM USERS";
-        RowMapper<User> mapper = rs -> new User(
-                rs.getString("userId"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("email"));
-        return selectTpl.query(sql, mapper);
-
+    public List<User> findAll() {
+        return em.createQuery("select u from User u", User.class).getResultList();
     }
 
     public User findByUserId(String userId) {
-        String sql = "SELECT * FROM USERS WHERE userId = ?";
-        PreparedStatementSetter pss = ps -> ps.setString(1, userId);
-        RowMapper<User> mapper = rs -> new User(
-                rs.getString("userId"),
-                rs.getString("password"),
-                rs.getString("name"),
-                rs.getString("email"));
-        return selectTpl.queryForObject(sql, pss, mapper);
+       return em.find(User.class, userId);
 
-}
+    }
 
 }

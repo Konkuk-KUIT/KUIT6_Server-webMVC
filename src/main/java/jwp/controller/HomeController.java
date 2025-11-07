@@ -2,26 +2,27 @@ package jwp.controller;
 
 import jwp.dao.QuestionDao;
 import jwp.model.Question;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 
-@WebServlet("/home")
+@Controller
+@RequestMapping("/")
+@RequiredArgsConstructor
 public class HomeController extends HttpServlet {
-    private final QuestionDao questionDao = new QuestionDao();
+    private final QuestionDao questionDao;
 
-	@Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+	@GetMapping
+    public String home(Model model) throws Exception {
         List<Question> questions = questionDao.findAll();
-        req.setAttribute("questions", questions);
-
-        req.getRequestDispatcher("/home.jsp").forward(req, resp);
+        model.addAttribute("questions", questions);
+        return "home";
     }
 }

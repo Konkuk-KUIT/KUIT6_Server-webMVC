@@ -1,39 +1,35 @@
 package jwp.dao;
 
-import core.jdbc.*;
 import jwp.model.Question;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Repository
+@RequiredArgsConstructor
 public class QuestionDao {
-    private final SelectJdbcTemplate<Question> selectTpl = new SelectJdbcTemplate<>();
-    private final InsertJdbcTemplate insertTpl = new InsertJdbcTemplate();
-    private final QuestionRowMapper mapper = new QuestionRowMapper();
+    private final EntityManager em;
 
+    @Transactional
+    public Question insert(Question question) {
+        em.persist(question);
+        return em.find(Question.class, question.getQuestionId());
+    }
 
-    public Question findById(long id) {
-        String sql = "SELECT * FROM QUESTIONS WHERE questionId = ?";
-        return selectTpl.queryForObject(sql, ps -> ps.setLong(1, id), mapper);
+    @Transactional
+    public void update(Question question) {
+        em.merge(question);
     }
 
     public List<Question> findAll() {
-        String sql = "SELECT * FROM QUESTIONS ORDER BY questionId DESC";
-        return selectTpl.query(sql, mapper);
+        return em.createQuery("select q from Question q", Question.class).getResultList();
     }
 
-    public Question insert(String writer, String title, String contents) {
-        String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) " +
-                "VALUES (?, ?, ?, CURRENT_TIMESTAMP(), 0)";
-
-        KeyHolder kh = new KeyHolder();
-        PreparedStatementSetter pss = ps -> {
-            ps.setString(1, writer);
-            ps.setString(2, title);
-            ps.setString(3, contents);
-        };
-
-        insertTpl.execute(sql, pss, kh);
-        return findById(kh.getId());
+    public Question findById(long id) {
+        return em.find(Question.class, id);
     }
 
 
