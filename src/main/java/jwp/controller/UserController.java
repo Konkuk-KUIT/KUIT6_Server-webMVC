@@ -2,6 +2,7 @@ package jwp.controller;
 
 import jwp.dao.UserDao;
 import jwp.model.User;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,8 +14,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/user")
+@RequiredArgsConstructor
 public class UserController {
-    private final UserDao userDao = new UserDao();
+    private final UserDao userDao;
 
     @PostMapping("/signup")
     public String createUser(@ModelAttribute User user) {
