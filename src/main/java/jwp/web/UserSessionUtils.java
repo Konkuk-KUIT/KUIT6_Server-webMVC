@@ -12,6 +12,7 @@ public class UserSessionUtils {
         Object user = session.getAttribute(USER_SESSION_KEY);
         if(user == null) {
             return null;
+
         }
         return (User)user;
 
