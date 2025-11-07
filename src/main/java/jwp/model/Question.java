@@ -1,11 +1,22 @@
 package jwp.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table(name = "QUESTIONS")
+@NoArgsConstructor
+@Getter
+@Setter
 public class Question {
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private int questionId;
     private String writer;
     private String title;
@@ -30,6 +41,7 @@ public class Question {
         this.createdDate = Date.valueOf(LocalDate.now());
         this.countOfAnswer = countOfAnswer;
     }
+
 
     public int getQuestionId() {
         return questionId;

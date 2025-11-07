@@ -1,9 +1,26 @@
 package jwp.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.lang.Nullable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "USERS")
+@NoArgsConstructor
+
 public class User {
+    @Id
     private String userId;
     private String password;
     private String name;
+    @Nullable
     private String email;
 
     public User(String userId, String password, String name, String email) {
@@ -18,20 +35,10 @@ public class User {
         this.password = password;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
+    public User(String userId, String password, String name) {
+        this.userId = userId;
+        this.password = password;
+        this.name = name;
     }
 
     public void update(User updateUser) {
