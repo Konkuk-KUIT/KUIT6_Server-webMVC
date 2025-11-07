@@ -1,6 +1,18 @@
 package jwp.model;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USERS")
+@NoArgsConstructor
 public class User {
+    @Id
+    @Column(updatable = false, nullable = false)
     private String userId;
     private String password;
     private String name;
@@ -21,12 +33,24 @@ public class User {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void update(User updateUser) {

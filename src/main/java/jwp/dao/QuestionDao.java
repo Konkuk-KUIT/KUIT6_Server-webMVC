@@ -1,64 +1,35 @@
 package jwp.dao;
 
-import core.jdbc.JdbcTemplate;
-import core.jdbc.KeyHolder;
-import core.jdbc.PreparedStatementSetter;
-import core.jdbc.RowMapper;
 import jwp.model.Question;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository // 요구사항 2: 데이터 접근 계층 Bean으로 등록
+@RequiredArgsConstructor // 요구사항 3: 생성자 자동 주입
 public class QuestionDao {
-    private final JdbcTemplate<Question> jdbcTemplate = new JdbcTemplate<>();
 
+    private final EntityManager em; // 생성자 주입
+
+    // findAll (JDBC -> JPQL)
     public List<Question> findAll() throws SQLException {
-        String sql = "SELECT * FROM QUESTIONS";
-
-        RowMapper<Question> rowMapper = rs -> new Question(
-                rs.getLong("questionId"),
-                rs.getString("writer"),
-                rs.getString("title"),
-                rs.getString("contents"),
-                rs.getTimestamp("createdDate"),
-                rs.getInt("countOfAnswer")
-        );
-
-        return jdbcTemplate.query(sql, rowMapper);
+        return em.createQuery("select q from Question q", Question.class)
+                .getResultList();
     }
-    // RowMapper를 공통으로 사용하기 위해 멤버 변수로 추출
-    private final RowMapper<Question> rowMapper = rs -> new Question(
-            rs.getLong("questionId"),
-            rs.getString("writer"),
-            rs.getString("title"),
-            rs.getString("contents"),
-            rs.getTimestamp("createdDate"),
-            rs.getInt("countOfAnswer")
-    );
 
+    // findByQuestionId (JDBC -> JPA find)
     public Question findByQuestionId(long questionId) throws SQLException {
-        String sql = "SELECT * FROM QUESTIONS WHERE questionId = ?";
-
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setLong(1, questionId);
-        };
-
-        return jdbcTemplate.queryForObject(sql, pstmtSetter, rowMapper);
+        return em.find(Question.class, questionId);
     }
 
-    public Question insert(String writer, String title, String contents) throws SQLException {
-        String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALUES (?, ?, ?, CURRENT_TIMESTAMP(), 0)";
-        KeyHolder keyHolder = new KeyHolder();
-
-        PreparedStatementSetter pstmtSetter = pstmt -> {
-            pstmt.setString(1, writer);
-            pstmt.setString(2, title);
-            pstmt.setString(3, contents);
-        };
-
-        jdbcTemplate.update(sql, pstmtSetter, keyHolder);
-
-        // KeyHolder로 받은 ID를 이용해 findByQuestionId 호출하여 Question 객체 반환
-        return findByQuestionId(keyHolder.getId());
+    // insert (JDBC -> JPA persist)
+    @Transactional // 데이터를 변경하므로 트랜잭션 필요
+    public Question insert(Question question) throws SQLException {
+        em.persist(question);
+        return question; // persist 후 영속화된 객체 반환
     }
 }
