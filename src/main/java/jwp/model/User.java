@@ -1,6 +1,7 @@
 package jwp.model;
 
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERS")
+@Setter
 @NoArgsConstructor
 public class User {
     @Id
