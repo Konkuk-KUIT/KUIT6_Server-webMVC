@@ -1,6 +1,16 @@
 package jwp.model;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USERS")
+@NoArgsConstructor
 public class User {
+    @Id
     private String userId;
     private String password;
     private String name;
@@ -11,6 +21,11 @@ public class User {
         this.password = password;
         this.name = name;
         this.email = email;
+    }
+
+    public User(String userId, String password) {
+        this.userId = userId;
+        this.password = password;
     }
 
     public String getUserId() {
@@ -87,6 +102,7 @@ public class User {
             return false;
         return true;
     }
+
 
     @Override
     public String toString() {
