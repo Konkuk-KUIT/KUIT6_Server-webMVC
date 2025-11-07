@@ -8,7 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.sql.SQLException;
 
 @Controller
@@ -47,6 +51,16 @@ public class UserController {
             System.out.println("비밀번호를 확인해주세요");
             return "redirect:/user/loginFailed";
         }
+    }
+
+    // 로그아웃
+    @PostMapping("/logout")
+    public String logoutUser(HttpSession session)  {
+        if (session.getAttribute("user") != null) {
+            session.removeAttribute("user");
+        }
+        System.out.println("로그아웃 되었습니다");
+        return "redirect:/";
     }
 
     // 유저 전체 목록 조회

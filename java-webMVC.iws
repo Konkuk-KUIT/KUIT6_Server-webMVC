@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor(model): Question 모델을 JPA Entity로 변경">
-      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/HomeController.java" afterDir="false" />
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor(UserController): ForwardControllers 변경">
       <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/dao/QuestionDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +264,7 @@
       <workItem from="1762168256713" duration="403000" />
       <workItem from="1762168715236" duration="1035000" />
       <workItem from="1762443752200" duration="6320000" />
-      <workItem from="1762485499471" duration="3545000" />
+      <workItem from="1762485499471" duration="3847000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -525,7 +522,31 @@
       <option name="project" value="LOCAL" />
       <updated>1762496092340</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="refactor(HomeController): HomeController 변경">
+      <option name="closed" value="true" />
+      <created>1762497104350</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1762497104350</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor(QuestionDao): QuestionDao 변경">
+      <option name="closed" value="true" />
+      <created>1762497155607</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1762497155607</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactor(UserController): ForwardControllers 변경">
+      <option name="closed" value="true" />
+      <created>1762497185743</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1762497185743</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -543,9 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: create ListUserController" />
-    <MESSAGE value="feat: create LoginController" />
-    <MESSAGE value="feat: create LogoutController" />
     <MESSAGE value="feat: create UpdateUserFormController" />
     <MESSAGE value="feat: create UpdateUserController" />
     <MESSAGE value="fix: fix mistakes" />
@@ -568,7 +586,10 @@
     <MESSAGE value="6주차 강의영상까지 따라함" />
     <MESSAGE value="refactor: migration LoginController.java to UserController.java" />
     <MESSAGE value="refactor(model): Question 모델을 JPA Entity로 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(model): Question 모델을 JPA Entity로 변경" />
+    <MESSAGE value="refactor(HomeController): HomeController 변경" />
+    <MESSAGE value="refactor(QuestionDao): QuestionDao 변경" />
+    <MESSAGE value="refactor(UserController): ForwardControllers 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(UserController): ForwardControllers 변경" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
