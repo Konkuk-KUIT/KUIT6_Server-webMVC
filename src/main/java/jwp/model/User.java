@@ -1,9 +1,31 @@
 package jwp.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USERS")
+@Getter
+@Setter
+@NoArgsConstructor
 public class User {
+    @Id
+    @Column(name = "userId", nullable = false, length = 12)   // ← DB 컬럼과 정확히 매핑
     private String userId;
+
+    @Column(name = "password", nullable = false, length = 12)
     private String password;
+
+    @Column(name = "name", nullable = false, length = 20)
     private String name;
+
+    @Column(name = "email", length = 50)
     private String email;
 
     public User(String userId, String password, String name, String email) {

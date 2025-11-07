@@ -9,6 +9,7 @@ gen
 .DS_Store
 .gradle
 build
-
+*.ipr
+*.iws
 # 자동생성 폴더
 /tomcat.8080/
