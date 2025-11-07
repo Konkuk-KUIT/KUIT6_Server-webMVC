@@ -1,9 +1,18 @@
 package jwp.model;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+@Entity
+@Table(name = "QUESTIONS")
+@NoArgsConstructor
 public class Question {
+    @Id
     private long questionId;        // bigint -> long
     private String writer;          // varchar -> String
     private String title;           // varchar -> String
