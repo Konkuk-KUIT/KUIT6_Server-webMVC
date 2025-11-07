@@ -16,7 +16,6 @@ import java.sql.SQLException;
 @RequiredArgsConstructor
 public class UserController {
     private final UserDao userDao;
-    private final QuestionDao questionDao;
 
     // 회원가입
     @PostMapping("/signup")
