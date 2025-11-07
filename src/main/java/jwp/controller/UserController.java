@@ -5,11 +5,10 @@ import jwp.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -32,5 +31,39 @@ public class UserController {
         }
         model.addAttribute("users", userDao.findAll());
         return "user/list";
+    }
+
+    @GetMapping("/updateForm")
+    public String updateForm(HttpSession session) {
+        User sessionUser = (User) session.getAttribute("user");
+        if (sessionUser != null) {
+            return "user/updateForm";
+        }
+        return "redirect:" + "/";
+    }
+
+    @PostMapping("/update")
+    public String updateUser(@ModelAttribute User user) {
+        User oldUser = userDao.findByUserId(user.getUserId());
+        if (oldUser == null) return "redirect:" + "user/login";
+        oldUser.update(user);
+        userDao.update(oldUser);
+        return "redirect:" + "/user/list";
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam String userId, @RequestParam String password, HttpSession session){
+        User user = userDao.findByUserId(userId);
+        if (user != null && user.matchPassword(password)) {
+            session.setAttribute("user", user);
+            return "redirect:" + "/";
+        }
+        return "redirect:" + "/user/loginFailed.jsp";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("user");
+        return "redirect:" + "/";
     }
 }
