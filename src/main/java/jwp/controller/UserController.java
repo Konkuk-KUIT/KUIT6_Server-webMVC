@@ -1,5 +1,6 @@
 package jwp.controller;
 
+import jwp.dao.QuestionDao;
 import jwp.dao.UserDao;
 import jwp.model.User;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import java.sql.SQLException;
 @RequiredArgsConstructor
 public class UserController {
     private final UserDao userDao;
+    private final QuestionDao questionDao;
 
     // 회원가입
     @PostMapping("/signup")
@@ -55,5 +57,20 @@ public class UserController {
             return "user/list";
         }
         return "redirect:/user/loginForm";
+    }
+
+
+    // 폼(view)을 보여주는 메소드들
+    @GetMapping("/signupForm")
+    public String showSignupForm() {
+        return "user/form";
+    }
+    @GetMapping("/loginForm")
+    public String showLoginForm() {
+        return "user/login";
+    }
+    @GetMapping("/loginFailed")
+    public String showLoginFailed() {
+        return "user/loginFailed";
     }
 }
