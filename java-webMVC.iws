@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor(UserController): UpdateUserController 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/QnaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-webMVC.iws" beforeDir="false" afterPath="$PROJECT_DIR$/java-webMVC.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/CreateQuestionFormController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jwp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jwp/controller/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="9060abf8-c0f7-46f2-a6cf-329d071510fa" name="Changes" comment="refactor(QnaController): ShowQuestionController 변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +262,7 @@
       <workItem from="1762168256713" duration="403000" />
       <workItem from="1762168715236" duration="1035000" />
       <workItem from="1762443752200" duration="6320000" />
-      <workItem from="1762485499471" duration="9175000" />
+      <workItem from="1762485499471" duration="10165000" />
     </task>
     <task id="LOCAL-00001" summary="feat: create CreateUserController">
       <option name="closed" value="true" />
@@ -589,7 +584,39 @@
       <option name="project" value="LOCAL" />
       <updated>1762499142149</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor(QnaController): CreateQuestionController and CreateQuestionFormController 변경">
+      <option name="closed" value="true" />
+      <created>1762526307890</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1762526307890</updated>
+    </task>
+    <task id="LOCAL-00042" summary="refactor(QnaController): CreateQuestionController and CreateQuestionFormController 변경">
+      <option name="closed" value="true" />
+      <created>1762526318893</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1762526318893</updated>
+    </task>
+    <task id="LOCAL-00043" summary="refactor(QnaController): ShowQuestionController 변경">
+      <option name="closed" value="true" />
+      <created>1762526975580</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1762526975580</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor(QnaController): ShowQuestionController 변경">
+      <option name="closed" value="true" />
+      <created>1762526985197</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1762526985197</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,8 +634,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: 회원 목록 및 개인정보 수정 보안 강화" />
-    <MESSAGE value="feat: create Controller, RequestMapper, DispatcherServlet" />
     <MESSAGE value="refactor: change controllers for use Controller interface and create ForwardingController for handle forward jsp" />
     <MESSAGE value="refactor: use static" />
     <MESSAGE value="feat: create UserDao" />
@@ -632,7 +657,9 @@
     <MESSAGE value="refactor(UserController): LogoutController 변경" />
     <MESSAGE value="refactor(UserController): UpdateUserFormController 변경" />
     <MESSAGE value="refactor(UserController): UpdateUserController 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(UserController): UpdateUserController 변경" />
+    <MESSAGE value="refactor(QnaController): CreateQuestionController and CreateQuestionFormController 변경" />
+    <MESSAGE value="refactor(QnaController): ShowQuestionController 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(QnaController): ShowQuestionController 변경" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

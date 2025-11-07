@@ -5,9 +5,11 @@ import jwp.model.Question;
 import jwp.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
 
 @Controller
 @RequestMapping("/qna")
@@ -44,5 +46,21 @@ public class QnaController {
         questionDao.insert(questionToSave);
 
         return "redirect:/qna/show?questionId=" + questionToSave.getQuestionId();
+    }
+
+    @GetMapping("/show")
+    public String showQuestion(@RequestParam("questionId") String questionIdParam, Model model) throws SQLException {
+        long questionId = Long.parseLong(questionIdParam);
+
+        Question question = questionDao.findByQuestionId(questionId);
+
+        if (question == null) {
+            System.out.println("해당 ID의 질문을 찾을 수 없습니다: " + questionId);
+            return "redirect:/";
+        }
+
+        model.addAttribute("question", question);
+
+        return "qna/show";
     }
 }
