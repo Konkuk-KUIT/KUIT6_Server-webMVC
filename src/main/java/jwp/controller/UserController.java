@@ -1,5 +1,6 @@
 package jwp.controller;
 
+import core.db.MemoryUserRepository;
 import jwp.dao.QuestionDao;
 import jwp.dao.UserDao;
 import jwp.model.User;
@@ -71,6 +72,20 @@ public class UserController {
             return "user/list";
         }
         return "redirect:/user/loginForm";
+    }
+
+    // UpdateUserForm
+    @GetMapping("/updateForm")
+    public String showUpdateForm(HttpSession session, @RequestParam("userId")  String updateUserId, Model model) throws Exception {
+        User sessionUser = (User) session.getAttribute("user");
+
+        if (sessionUser != null && sessionUser.isSameUser(updateUserId)) {
+            User user = userDao.findByUserId(updateUserId);
+            model.addAttribute("user", user);
+            return "user/updateForm";
+        } else {
+            return "redirect:/";
+        }
     }
 
 
