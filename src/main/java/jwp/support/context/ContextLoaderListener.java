@@ -15,7 +15,6 @@ public class ContextLoaderListener implements ServletContextListener {
 //        populator.addScript(new ClassPathResource("jwp.sql"));
 //        ConnectionManager.getDataSource();
 //        DatabasePopulatorUtils.execute(populator, ConnectionManager.getDataSource());
-
         logger.info("Completed Load ServletContext!");
     }
 
